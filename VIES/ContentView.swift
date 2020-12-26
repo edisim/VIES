@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    // TODO: Tab bar ko i u prvoj aplikaciji
+    @AppStorage("selectedView") var selectedView: String?
     @State private var numberVAT = ""
     @State private var countryCodeVAT = ""
     @State private var numberFormatVAT = ""
@@ -18,39 +21,45 @@ struct ContentView: View {
     var validCharacters = NSCharacterSet.capitalizedLetters
     //TODO: User can save his VAT number so he does not need to enter it every time (USERDEFAULTS)
     var body: some View {
-        NavigationView {
-            Form {
-                
-                Picker(selection: $selectedCountry, label: Text("Member State")) {
-                    ForEach(0 ..< countries.count) {
-                        Text(countries[$0]).tag($0)
+        TabView(selection: $selectedView) {
+            NavigationView {
+                Form {
+                    
+                    Picker(selection: $selectedCountry, label: Text("Member State")) {
+                        ForEach(0 ..< countries.count) {
+                            Text(countries[$0]).tag($0)
+                        }
                     }
-                }
-                Section(header: Text("VAT Number")) {
-                    HStack {
-                        Text("\(countryCodeVAT)")
-                        TextField("\(numberFormatVAT)", text: $numberVAT)
-                            .disableAutocorrection(true)
-                            .keyboardType(.numberPad)
-                        
+                    Section(header: Text("VAT Number")) {
+                        HStack {
+                            Text("\(countryCodeVAT)")
+                            TextField("\(numberFormatVAT)", text: $numberVAT)
+                                .disableAutocorrection(true)
+                                .keyboardType(.numberPad)
+                            
+                        }
                     }
+                    
+                    
+                    
+                    Button(action: {validateVAT("\(countryCodeVAT)"+"\(numberVAT)")}) {
+                        Text("Verify")
+                    }
+                    .disabled(checkInput())
+                    
+                    
+                }.navigationBarTitle("VAT Validation")
+                .onAppear {
+                    countryToCountryCode(selectedCountry: selectedCountry)
                 }
                 
-                
-                
-                Button(action: {validateVAT("\(countryCodeVAT)"+"\(numberVAT)")}) {
-                    Text("Verify")
-                }
-                .disabled(checkInput())
-                
-                
-            }.navigationBarTitle("VAT Validation")
-            .onAppear {
-                countryToCountryCode(selectedCountry: selectedCountry)
+            }.sheet(isPresented: $showingSheet) {
+                ValidationSheetView(response: response)
             }
+            .tabItem { Label("Validation", systemImage: "checkmark.circle.fill") }
             
-        }.sheet(isPresented: $showingSheet) {
-            ValidationSheetView(response: response)
+            CalculatorView()
+                .tabItem { Label("Calculator", systemImage: "percent") }
         }
         
     }
@@ -72,20 +81,14 @@ struct ContentView: View {
             } else {
                 return false
             }
-        // Prefix with zero ‘0’ if the customer provides a 9 digit VAT number.
-        case 1:
+        // Prefix with zero ‘0’ if the customer provides a 9 digit VAT number ZA CASE 1.
+        case 1, 2:
             if baseRule || numberVAT.count != 10 && numberVAT.count != 9 {
                 return true
             } else {
                 return false
             }
-        case 2:
-            if baseRule || numberVAT.count != 10 && numberVAT.count != 9 {
-                return true
-            } else {
-                return false
-            }
-        case 3:
+        case 3, 14, 15:
             if baseRule || numberVAT.count != 11 {
                 return true
             } else {
@@ -103,101 +106,20 @@ struct ContentView: View {
             } else {
                 return false
             }
-        case 6:
+        case 6, 8, 12, 17, 18, 24 :
             if baseRule || numberVAT.count != 8 {
                 return true
             } else {
                 return false
             }
-        case 7:
+        case 7, 10, 11, 21, 25:
             if baseRule || numberVAT.count != 9 {
                 return true
             } else {
                 return false
             }
-        case 8:
-            if baseRule || numberVAT.count != 8 {
-                return true
-            } else {
-                return false
-            }
-        // JEBENI FRANCUZI SU LUDI
-        case 9:
-            if baseRule || numberVAT.count != 11  {
-                return true
-            } else {
-                return false
-            }
-        case 10:
-            if baseRule || numberVAT.count != 9 {
-                return true
-            } else {
-                return false
-            }
-        case 11:
-            if baseRule || numberVAT.count != 9 {
-                return true
-            } else {
-                return false
-            }
-        case 12:
-            if baseRule || numberVAT.count != 8 {
-                return true
-            } else {
-                return false
-            }
-        // Irska ko i Francuska
-        case 13:
-            if baseRule || numberVAT.count != 9 && numberVAT.count != 8{
-                return true
-            } else {
-                return false
-            }
-        case 14:
-            if baseRule || numberVAT.count != 11 {
-                return true
-            } else {
-                return false
-            }
-        case 15:
-            if baseRule || numberVAT.count != 11 {
-                return true
-            } else {
-                return false
-            }
-        case 16:
-            if baseRule || numberVAT.count != 12 && numberVAT.count != 9 {
-                return true
-            } else {
-                return false
-            }
-        case 17:
-            if baseRule || numberVAT.count != 8 {
-                return true
-            } else {
-                return false
-            }
-        case 18:
-            if baseRule || numberVAT.count != 8 {
-                return true
-            } else {
-                return false
-            }
-        // slovo b za nizozemce
-        case 19:
-            if baseRule || numberVAT.count != 12 {
-                return true
-            } else {
-                return false
-            }
-        case 20:
+        case 20, 23:
             if baseRule || numberVAT.count != 10 {
-                return true
-            } else {
-                return false
-            }
-        case 21:
-            if baseRule || numberVAT.count != 9 {
                 return true
             } else {
                 return false
@@ -208,25 +130,40 @@ struct ContentView: View {
             } else {
                 return false
             }
-        case 23:
-            if baseRule || numberVAT.count != 10 {
+        case 16:
+            if baseRule || numberVAT.count != 12 && numberVAT.count != 9 {
                 return true
             } else {
                 return false
             }
-        case 24:
-            if baseRule || numberVAT.count != 8 {
+           
+            
+        // 11 characters. May include alphabetical characters (any except O or I) as first or second or first and second characters.
+        case 9:
+            if baseRule || numberVAT.count != 11  {
                 return true
             } else {
                 return false
             }
-        // SLova slova SlOVA
-        case 25:
-            if baseRule || numberVAT.count != 9 {
+            
+        //8 or 9 characters. Includes one or two alphabetical characters (last, or second and last, or last 2).
+        case 13:
+            if baseRule || numberVAT.count != 9 && numberVAT.count != 8{
                 return true
             } else {
                 return false
             }
+            
+            
+        // 12 characters. The tenth character is always B.
+        case 19:
+            if baseRule || numberVAT.count != 12 {
+                return true
+            } else {
+                return false
+            }
+
+            
         default:
             if baseRule || numberVAT.count != 12 {
                 return true
@@ -325,7 +262,7 @@ struct ContentView: View {
     
     func validateVAT(_ VAT: String) {
         
-        var semaphore = DispatchSemaphore (value: 0)
+        let semaphore = DispatchSemaphore (value: 0)
         let url: URL? = URL(string: "https://api.vatcomply.com/vat?vat_number=\(VAT)")
         var request = URLRequest(url: (url ?? URL(string: "https://api.vatcomply.com/vat?vat_number="))!)
         request.addValue("__cfduid=db6f000a97f4db915610c6c2043af38c11608235266", forHTTPHeaderField: "Cookie")

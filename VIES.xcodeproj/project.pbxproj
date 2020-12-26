@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		938F6B722597088C0033BBE3 /* CalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938F6B712597088C0033BBE3 /* CalculatorView.swift */; };
 		939ECD812590441E00014A71 /* ValidationSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939ECD802590441E00014A71 /* ValidationSheetView.swift */; };
 		93CF2584258C6E07007CABA9 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CF2583258C6E07007CABA9 /* Model.swift */; };
 		93D92EC6258B30760062BEB3 /* VIESApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D92EC5258B30760062BEB3 /* VIESApp.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		938F6B712597088C0033BBE3 /* CalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorView.swift; sourceTree = "<group>"; };
 		939ECD802590441E00014A71 /* ValidationSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationSheetView.swift; sourceTree = "<group>"; };
 		93CF2583258C6E07007CABA9 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		93D92EC2258B30760062BEB3 /* VIES.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VIES.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -58,6 +60,7 @@
 			children = (
 				93D92EC5258B30760062BEB3 /* VIESApp.swift */,
 				93D92EC7258B30760062BEB3 /* ContentView.swift */,
+				938F6B712597088C0033BBE3 /* CalculatorView.swift */,
 				939ECD802590441E00014A71 /* ValidationSheetView.swift */,
 				93CF2583258C6E07007CABA9 /* Model.swift */,
 				93D92EC9258B307A0062BEB3 /* Assets.xcassets */,
@@ -145,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				93CF2584258C6E07007CABA9 /* Model.swift in Sources */,
+				938F6B722597088C0033BBE3 /* CalculatorView.swift in Sources */,
 				93D92EC8258B30760062BEB3 /* ContentView.swift in Sources */,
 				93D92EC6258B30760062BEB3 /* VIESApp.swift in Sources */,
 				939ECD812590441E00014A71 /* ValidationSheetView.swift in Sources */,
@@ -277,6 +281,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"VIES/Preview Content\"";
 				DEVELOPMENT_TEAM = LJF744GC3Q;
 				ENABLE_PREVIEWS = YES;
@@ -301,6 +306,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"VIES/Preview Content\"";
 				DEVELOPMENT_TEAM = LJF744GC3Q;
 				ENABLE_PREVIEWS = YES;
