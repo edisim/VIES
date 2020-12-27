@@ -15,10 +15,11 @@ extension String {
 }
 
 struct CalculatorView: View {
+    static let tag: String? = "Calculator"
     @State private var grossAmount = ""
     @State private var rate = 0.0
-    @State private var VAT = ""
-    @State private var netAmount = ""
+    @State private var VAT = 0.0
+    @State private var netAmount = 0.0
     var body: some View {
         NavigationView {
         Form {
@@ -28,15 +29,15 @@ struct CalculatorView: View {
             Button(action: {calculate(rate: rate)}) {
                 Text("Calculate")
             }.disabled(!grossAmount.containsOnlyDigits)
-            Text("VAT Amount \(VAT)")
-            Text("Net Amount \(netAmount)")
+            Text("VAT Amount \(VAT, specifier: "%.2f")")
+            Text("Net Amount \(netAmount, specifier: "%.2f")")
         }.navigationBarTitle("VAT Calculator")
         }
     }
     func calculate(rate: Double){
         
-        VAT = String(Double(grossAmount)! * Double((rate)/100))
-        netAmount = String(Double(grossAmount)! - Double(VAT)!)
+        VAT = Double(grossAmount)! * (rate/100)
+        netAmount = Double(grossAmount)! - VAT
         
         
     }
