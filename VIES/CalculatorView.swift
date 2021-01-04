@@ -28,7 +28,7 @@ struct CalculatorView: View {
             Text("VAT Rate \(rate, specifier: "%.f")%")
             Button(action: {calculate(rate: rate)}) {
                 Text("Calculate")
-            }.disabled(!grossAmount.containsOnlyDigits)
+            }.disabled(!grossAmount.containsOnlyDigits || grossAmount.isEmpty)
             Text("VAT Amount \(VAT, specifier: "%.2f")")
             Text("Net Amount \(netAmount, specifier: "%.2f")")
         }.navigationBarTitle("VAT Calculator")
