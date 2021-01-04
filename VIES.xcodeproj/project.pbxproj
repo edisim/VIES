@@ -10,24 +10,30 @@
 		9331774F2598453B00EEE15D /* ValidationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9331774E2598453B00EEE15D /* ValidationView.swift */; };
 		938F6B722597088C0033BBE3 /* CalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938F6B712597088C0033BBE3 /* CalculatorView.swift */; };
 		939ECD812590441E00014A71 /* ValidationSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939ECD802590441E00014A71 /* ValidationSheetView.swift */; };
-		93CF2584258C6E07007CABA9 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CF2583258C6E07007CABA9 /* Model.swift */; };
+		93CF2584258C6E07007CABA9 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CF2583258C6E07007CABA9 /* Response.swift */; };
 		93D92EC6258B30760062BEB3 /* VIESApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D92EC5258B30760062BEB3 /* VIESApp.swift */; };
 		93D92EC8258B30760062BEB3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D92EC7258B30760062BEB3 /* ContentView.swift */; };
 		93D92ECA258B307A0062BEB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93D92EC9258B307A0062BEB3 /* Assets.xcassets */; };
 		93D92ECD258B307A0062BEB3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93D92ECC258B307A0062BEB3 /* Preview Assets.xcassets */; };
+		93F951EB25A2EB1F003FC4BB /* CountryRatesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F951EA25A2EB1F003FC4BB /* CountryRatesListView.swift */; };
+		93F951F325A2EEB3003FC4BB /* CountryRateDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F951F225A2EEB3003FC4BB /* CountryRateDetailView.swift */; };
+		93F951F725A2F078003FC4BB /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F951F625A2F078003FC4BB /* Country.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9331774E2598453B00EEE15D /* ValidationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationView.swift; sourceTree = "<group>"; };
 		938F6B712597088C0033BBE3 /* CalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorView.swift; sourceTree = "<group>"; };
 		939ECD802590441E00014A71 /* ValidationSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationSheetView.swift; sourceTree = "<group>"; };
-		93CF2583258C6E07007CABA9 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		93CF2583258C6E07007CABA9 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		93D92EC2258B30760062BEB3 /* VIES.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VIES.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93D92EC5258B30760062BEB3 /* VIESApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VIESApp.swift; sourceTree = "<group>"; };
 		93D92EC7258B30760062BEB3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		93D92EC9258B307A0062BEB3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		93D92ECC258B307A0062BEB3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		93D92ECE258B307A0062BEB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		93F951EA25A2EB1F003FC4BB /* CountryRatesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryRatesListView.swift; sourceTree = "<group>"; };
+		93F951F225A2EEB3003FC4BB /* CountryRateDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryRateDetailView.swift; sourceTree = "<group>"; };
+		93F951F625A2F078003FC4BB /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,10 +68,10 @@
 			children = (
 				93D92EC5258B30760062BEB3 /* VIESApp.swift */,
 				93D92EC7258B30760062BEB3 /* ContentView.swift */,
-				938F6B712597088C0033BBE3 /* CalculatorView.swift */,
-				9331774E2598453B00EEE15D /* ValidationView.swift */,
-				939ECD802590441E00014A71 /* ValidationSheetView.swift */,
-				93CF2583258C6E07007CABA9 /* Model.swift */,
+				93F951F025A2EE75003FC4BB /* Validation */,
+				93F951EF25A2EE6C003FC4BB /* Calculator */,
+				93F951EE25A2EE65003FC4BB /* Rates */,
+				93F951F525A2F05D003FC4BB /* Model */,
 				93D92EC9258B307A0062BEB3 /* Assets.xcassets */,
 				93D92ECE258B307A0062BEB3 /* Info.plist */,
 				93D92ECB258B307A0062BEB3 /* Preview Content */,
@@ -79,6 +85,41 @@
 				93D92ECC258B307A0062BEB3 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		93F951EE25A2EE65003FC4BB /* Rates */ = {
+			isa = PBXGroup;
+			children = (
+				93F951EA25A2EB1F003FC4BB /* CountryRatesListView.swift */,
+				93F951F225A2EEB3003FC4BB /* CountryRateDetailView.swift */,
+			);
+			path = Rates;
+			sourceTree = "<group>";
+		};
+		93F951EF25A2EE6C003FC4BB /* Calculator */ = {
+			isa = PBXGroup;
+			children = (
+				938F6B712597088C0033BBE3 /* CalculatorView.swift */,
+			);
+			path = Calculator;
+			sourceTree = "<group>";
+		};
+		93F951F025A2EE75003FC4BB /* Validation */ = {
+			isa = PBXGroup;
+			children = (
+				9331774E2598453B00EEE15D /* ValidationView.swift */,
+				939ECD802590441E00014A71 /* ValidationSheetView.swift */,
+			);
+			path = Validation;
+			sourceTree = "<group>";
+		};
+		93F951F525A2F05D003FC4BB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				93CF2583258C6E07007CABA9 /* Response.swift */,
+				93F951F625A2F078003FC4BB /* Country.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,11 +191,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				93CF2584258C6E07007CABA9 /* Model.swift in Sources */,
+				93CF2584258C6E07007CABA9 /* Response.swift in Sources */,
+				93F951F725A2F078003FC4BB /* Country.swift in Sources */,
 				938F6B722597088C0033BBE3 /* CalculatorView.swift in Sources */,
 				93D92EC8258B30760062BEB3 /* ContentView.swift in Sources */,
 				9331774F2598453B00EEE15D /* ValidationView.swift in Sources */,
+				93F951F325A2EEB3003FC4BB /* CountryRateDetailView.swift in Sources */,
 				93D92EC6258B30760062BEB3 /* VIESApp.swift in Sources */,
+				93F951EB25A2EB1F003FC4BB /* CountryRatesListView.swift in Sources */,
 				939ECD812590441E00014A71 /* ValidationSheetView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

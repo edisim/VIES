@@ -34,12 +34,11 @@ struct CalculatorView: View {
         }.navigationBarTitle("VAT Calculator")
         }
     }
-    func calculate(rate: Double){
-        
+    func calculate(rate: Double) {
+
         VAT = Double(grossAmount)! * (rate/100)
         netAmount = Double(grossAmount)! - VAT
-        
-        
+
     }
 }
 
