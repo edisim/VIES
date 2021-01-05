@@ -9,13 +9,13 @@ import SwiftUI
 
 struct CountryRatesListView: View {
     static let tag: String? = "Rates"
-    var countries: [String]
+    var countries: [Country]
     var body: some View {
         NavigationView {
             List {
-                ForEach(countries, id: \.self) { country in
+                ForEach(countries, id: \.name) { country in
                     NavigationLink(destination: CountryRateDetailView(country: country)) {
-                Text("\(country)")
+                        Text(country.name)
                 }
             }
             }
@@ -26,6 +26,6 @@ struct CountryRatesListView: View {
 
 struct CountryRatesListView_Previews: PreviewProvider {
     static var previews: some View {
-        CountryRatesListView(countries: ["Austria 🇦🇹", "Belgium 🇧🇪", "Bulgaria 🇧🇬", "Croatia 🇭🇷", "Cyprus 🇨🇾", "Czechia 🇨🇿", "Denmark 🇩🇰", "Estonia 🇪🇪", "Finland 🇫🇮", "France 🇫🇷", "Germany 🇩🇪", "Greece 🇬🇷", "Hungary 🇭🇺", "Ireland 🇮🇪", "Italy 🇮🇹", "Latvia 🇱🇻", "Lithuania 🇱🇹", "Luxembourg 🇱🇺", "Malta 🇲🇹", "Netherlands 🇳🇱", "Poland 🇵🇱", "Portugal 🇵🇹", "Romania 🇷🇴", "Slovakia 🇸🇰", "Slovenia 🇸🇮", "Spain 🇪🇸", "Sweden 🇸🇪"])
+        CountryRatesListView(countries: Country.all)
     }
 }

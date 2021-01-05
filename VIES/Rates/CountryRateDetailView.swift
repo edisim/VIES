@@ -8,14 +8,23 @@
 import SwiftUI
 
 struct CountryRateDetailView: View {
-    var country: String
+    var country: Country
     var body: some View {
-        Text(country)
+        VStack {
+            Text(country.name)
+            Text(country.countryCode)
+            Text("\(country.standardRate)")
+            ForEach(country.reducedRate, id: \.self) { value in
+                Text("\(value)")
+            }
+            Text("\(country.superReducedRate)")
+            Text("\(country.parkingRate)")
+        }
     }
 }
 
 struct CountryRateDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        CountryRateDetailView(country: "Croatia 🇭🇷")
+        CountryRateDetailView(country: Country.austria)
     }
 }
