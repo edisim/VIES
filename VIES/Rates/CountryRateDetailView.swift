@@ -10,15 +10,40 @@ import SwiftUI
 struct CountryRateDetailView: View {
     var country: Country
     var body: some View {
-        VStack {
+        VStack(alignment: .leading) {
             Text(country.name)
-            Text(country.countryCode)
-            Text("\(country.standardRate)")
-            ForEach(country.reducedRate, id: \.self) { value in
-                Text("\(value)")
+                .font(.largeTitle)
+                .fontWeight(.black)
+            Group {
+            HStack {
+                Text("Country Code:")
+            Text("\(country.countryCode)")
+                .fontWeight(.bold)
             }
-            Text("\(country.superReducedRate)")
-            Text("\(country.parkingRate)")
+            HStack {
+                Text("Standard Rate:")
+            Text("\(country.standardRate, specifier: "%.2f")")
+                .fontWeight(.bold)
+            }
+            HStack {
+                Text("Reduced Rate:")
+            ForEach(country.reducedRate, id: \.self) { value in
+                Text("\(value, specifier: "%.2f")")
+                    .fontWeight(.bold)
+            }
+            }
+            HStack {
+                Text("Super Reduced Rate:")
+            Text("\(country.superReducedRate, specifier: "%.2f")")
+                .fontWeight(.bold)
+            }
+            HStack {
+                Text("Parking Rate:")
+            Text("\(country.parkingRate, specifier: "%.2f")")
+                .fontWeight(.bold)
+            }
+            }.font(.body)
+            MapView(country: country)
         }
     }
 }

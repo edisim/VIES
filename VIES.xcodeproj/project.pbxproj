@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		9331774F2598453B00EEE15D /* ValidationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9331774E2598453B00EEE15D /* ValidationView.swift */; };
+		936FF15825A59368006922FA /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936FF15725A59368006922FA /* MapView.swift */; };
+		936FF15C25A5A77C006922FA /* Capitals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936FF15B25A5A77C006922FA /* Capitals.swift */; };
 		938F6B722597088C0033BBE3 /* CalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938F6B712597088C0033BBE3 /* CalculatorView.swift */; };
 		939ECD812590441E00014A71 /* ValidationSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939ECD802590441E00014A71 /* ValidationSheetView.swift */; };
 		93CF2584258C6E07007CABA9 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CF2583258C6E07007CABA9 /* Response.swift */; };
@@ -22,6 +24,8 @@
 
 /* Begin PBXFileReference section */
 		9331774E2598453B00EEE15D /* ValidationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationView.swift; sourceTree = "<group>"; };
+		936FF15725A59368006922FA /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		936FF15B25A5A77C006922FA /* Capitals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Capitals.swift; sourceTree = "<group>"; };
 		938F6B712597088C0033BBE3 /* CalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorView.swift; sourceTree = "<group>"; };
 		939ECD802590441E00014A71 /* ValidationSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationSheetView.swift; sourceTree = "<group>"; };
 		93CF2583258C6E07007CABA9 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
@@ -92,6 +96,7 @@
 			children = (
 				93F951EA25A2EB1F003FC4BB /* CountryRatesListView.swift */,
 				93F951F225A2EEB3003FC4BB /* CountryRateDetailView.swift */,
+				936FF15725A59368006922FA /* MapView.swift */,
 			);
 			path = Rates;
 			sourceTree = "<group>";
@@ -118,6 +123,7 @@
 			children = (
 				93CF2583258C6E07007CABA9 /* Response.swift */,
 				93F951F625A2F078003FC4BB /* Country.swift */,
+				936FF15B25A5A77C006922FA /* Capitals.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -198,7 +204,9 @@
 				9331774F2598453B00EEE15D /* ValidationView.swift in Sources */,
 				93F951F325A2EEB3003FC4BB /* CountryRateDetailView.swift in Sources */,
 				93D92EC6258B30760062BEB3 /* VIESApp.swift in Sources */,
+				936FF15825A59368006922FA /* MapView.swift in Sources */,
 				93F951EB25A2EB1F003FC4BB /* CountryRatesListView.swift in Sources */,
+				936FF15C25A5A77C006922FA /* Capitals.swift in Sources */,
 				939ECD812590441E00014A71 /* ValidationSheetView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
