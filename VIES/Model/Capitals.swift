@@ -16,9 +16,9 @@ struct Capital: Identifiable, Hashable {
 
 extension Capital {
     static let all: [Capital] = [
-    
+
     ]
-    
+
     static let vienna = Capital(latitude: 48.210033, longitude: 16.363449)
     static let brussels = Capital(latitude: 50.8466337, longitude: 4.3522251)
     static let sofia = Capital(latitude: 42.697387, longitude: 23.32406)
@@ -28,7 +28,7 @@ extension Capital {
     static let copenhagen = Capital(latitude: 55.6751148, longitude: 12.5690988)
     static let tallinn = Capital(latitude: 59.4328402, longitude: 24.7439894)
     static let athens = Capital(latitude: 37.9818899, longitude: 23.7274284)
-    static let madrid = Capital(latitude: 40.4196202, longitude: 3.6918167)
+    static let madrid = Capital(latitude: 40.416775, longitude: -3.703790)
     static let helsinki = Capital(latitude: 60.1738024, longitude: 24.9384889)
     static let paris = Capital(latitude: 48.8566419, longitude: 2.3518481)
     static let zagreb = Capital(latitude: 45.8011745, longitude: 15.9785517)

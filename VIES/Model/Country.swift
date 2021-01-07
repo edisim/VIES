@@ -47,9 +47,9 @@ extension Country {
         sweden,
         slovenia,
         slovakia
-        
+
     ]
-    
+
     static let austria = Country(name: "Austria 🇦🇹",
                                  countryCode: "AT",
                                  standardRate: 20,
@@ -57,7 +57,7 @@ extension Country {
                                  superReducedRate: 0,
                                  parkingRate: 13,
                                  capital: .vienna)
-    
+
     static let belgium = Country(name: "Belgium 🇧🇪",
                                  countryCode: "BE",
                                  standardRate: 21,
@@ -65,7 +65,7 @@ extension Country {
                                  superReducedRate: 0,
                                  parkingRate: 12,
                                  capital: .brussels)
-    
+
     static let bulgaria = Country(name: "Bulgaria 🇧🇬",
                                   countryCode: "BG",
                                   standardRate: 20,
@@ -73,7 +73,7 @@ extension Country {
                                   superReducedRate: 0,
                                   parkingRate: 0,
                                   capital: .sofia)
-    
+
     static let cyprus = Country(name: "Cyprus 🇨🇾",
                                 countryCode: "CY",
                                 standardRate: 19,
@@ -81,7 +81,7 @@ extension Country {
                                 superReducedRate: 0,
                                 parkingRate: 0,
                                 capital: .nicosia)
-    
+
     static let czechia = Country(name: "Czechia 🇨🇿",
                                  countryCode: "CZ",
                                  standardRate: 21,
@@ -89,7 +89,7 @@ extension Country {
                                  superReducedRate: 0,
                                  parkingRate: 0,
                                  capital: .prague)
-    
+
     static let germany = Country(name: "Germany 🇩🇪",
                                  countryCode: "DE",
                                  standardRate: 16,
@@ -97,7 +97,7 @@ extension Country {
                                  superReducedRate: 0,
                                  parkingRate: 0,
                                  capital: .berlin)
-    
+
     static let denmark = Country(name: "Denmark 🇩🇰",
                                  countryCode: "DK",
                                  standardRate: 25,
@@ -105,7 +105,7 @@ extension Country {
                                  superReducedRate: 0,
                                  parkingRate: 0,
                                  capital: .copenhagen)
-    
+
     static let estonia = Country(name: "Estonia 🇪🇪",
                                  countryCode: "EE",
                                  standardRate: 20,
@@ -113,7 +113,7 @@ extension Country {
                                  superReducedRate: 0,
                                  parkingRate: 0,
                                  capital: .tallinn)
-    
+
     static let greece = Country(name: "Greece 🇬🇷",
                                 countryCode: "EL",
                                 standardRate: 24,
@@ -121,7 +121,7 @@ extension Country {
                                 superReducedRate: 0,
                                 parkingRate: 0,
                                 capital: .athens)
-    
+
     static let spain = Country(name: "Spain 🇪🇸",
                                countryCode: "ES",
                                standardRate: 21,
@@ -129,7 +129,7 @@ extension Country {
                                superReducedRate: 4,
                                parkingRate: 0,
                                capital: .madrid)
-    
+
     static let finland = Country(name: "Finland 🇫🇮",
                                  countryCode: "FI",
                                  standardRate: 24,
@@ -137,7 +137,7 @@ extension Country {
                                  superReducedRate: 0,
                                  parkingRate: 0,
                                  capital: .helsinki)
-    
+
     static let france = Country(name: "France 🇫🇷",
                                 countryCode: "FR",
                                 standardRate: 20,
@@ -145,7 +145,7 @@ extension Country {
                                 superReducedRate: 2.1,
                                 parkingRate: 0,
                                 capital: .paris)
-    
+
     static let croatia = Country(name: "Croatia 🇭🇷",
                                  countryCode: "HR",
                                  standardRate: 25,
@@ -153,7 +153,7 @@ extension Country {
                                  superReducedRate: 0,
                                  parkingRate: 0,
                                  capital: .zagreb)
-    
+
     static let hungary = Country(name: "Hungary 🇭🇺",
                                  countryCode: "HU",
                                  standardRate: 27,
@@ -161,7 +161,7 @@ extension Country {
                                  superReducedRate: 0,
                                  parkingRate: 0,
                                  capital: .budapest)
-    
+
     static let ireland = Country(name: "Ireland 🇮🇪",
                                  countryCode: "IE",
                                  standardRate: 23,
@@ -169,7 +169,7 @@ extension Country {
                                  superReducedRate: 4.8,
                                  parkingRate: 13.5,
                                  capital: .dublin)
-    
+
     static let italy = Country(name: "Italy 🇮🇹",
                                countryCode: "IT",
                                standardRate: 22,
@@ -177,7 +177,7 @@ extension Country {
                                superReducedRate: 4,
                                parkingRate: 0,
                                capital: .rome)
-    
+
     static let lithuania = Country(name: "Lithuania 🇱🇹",
                                    countryCode: "LT",
                                    standardRate: 21,
@@ -185,7 +185,7 @@ extension Country {
                                    superReducedRate: 0,
                                    parkingRate: 0,
                                    capital: .vilnius)
-    
+
     static let luxembourg = Country(name: "Luxembourg 🇱🇺",
                                     countryCode: "LU",
                                     standardRate: 17,
@@ -193,7 +193,7 @@ extension Country {
                                     superReducedRate: 3,
                                     parkingRate: 14,
                                     capital: .luxembourg)
-    
+
     static let latvia = Country(name: "Latvia 🇱🇻",
                                 countryCode: "LV",
                                 standardRate: 21,
@@ -201,7 +201,7 @@ extension Country {
                                 superReducedRate: 0,
                                 parkingRate: 0,
                                 capital: .riga)
-    
+
     static let malta = Country(name: "Malta 🇲🇹",
                                countryCode: "MT",
                                standardRate: 18,
@@ -209,7 +209,7 @@ extension Country {
                                superReducedRate: 0,
                                parkingRate: 0,
                                capital: .valletta)
-    
+
     static let netherlands = Country(name: "Netherlands 🇳🇱",
                                      countryCode: "NL",
                                      standardRate: 21,
@@ -217,7 +217,7 @@ extension Country {
                                      superReducedRate: 0,
                                      parkingRate: 0,
                                      capital: .amsterdam)
-    
+
     static let poland = Country(name: "Poland 🇵🇱",
                                 countryCode: "PL",
                                 standardRate: 23,
@@ -225,7 +225,7 @@ extension Country {
                                 superReducedRate: 0,
                                 parkingRate: 0,
                                 capital: .warsaw)
-    
+
     static let portugal = Country(name: "Portugal 🇵🇹",
                                   countryCode: "PT",
                                   standardRate: 23,
@@ -233,7 +233,7 @@ extension Country {
                                   superReducedRate: 0,
                                   parkingRate: 13,
                                   capital: .lisbon)
-    
+
     static let romania = Country(name: "Romania 🇷🇴",
                                  countryCode: "RO",
                                  standardRate: 19,
@@ -241,7 +241,7 @@ extension Country {
                                  superReducedRate: 0,
                                  parkingRate: 0,
                                  capital: .bucharest)
-    
+
     static let sweden = Country(name: "Sweden 🇸🇪",
                                 countryCode: "SE",
                                 standardRate: 25,
@@ -249,7 +249,7 @@ extension Country {
                                 superReducedRate: 0,
                                 parkingRate: 0,
                                 capital: .stockholm)
-    
+
     static let slovenia = Country(name: "Slovenia 🇸🇮",
                                   countryCode: "SI",
                                   standardRate: 22,
@@ -257,7 +257,7 @@ extension Country {
                                   superReducedRate: 0,
                                   parkingRate: 0,
                                   capital: .ljubljana)
-    
+
     static let slovakia = Country(name: "Slovakia 🇸🇰",
                                   countryCode: "SK",
                                   standardRate: 20,
@@ -265,6 +265,5 @@ extension Country {
                                   superReducedRate: 0,
                                   parkingRate: 0,
                                   capital: .bratislava)
-    
-    
+
 }

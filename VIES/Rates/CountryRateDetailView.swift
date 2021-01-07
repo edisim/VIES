@@ -14,6 +14,7 @@ struct CountryRateDetailView: View {
             Text(country.name)
                 .font(.largeTitle)
                 .fontWeight(.black)
+                .padding(.leading)
             Group {
             HStack {
                 Text("Country Code:")
@@ -43,6 +44,8 @@ struct CountryRateDetailView: View {
                 .fontWeight(.bold)
             }
             }.font(.body)
+            .padding(.leading)
+
             MapView(country: country)
         }
     }

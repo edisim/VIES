@@ -8,7 +8,6 @@
 import SwiftUI
 import MapKit
 
-
 struct MapView: View {
     var country: Country
     @State private var userTrackingMode: MapUserTrackingMode = .follow
@@ -22,7 +21,7 @@ struct MapView: View {
             longitudeDelta: 50
         )
     )
-    
+
     var body: some View {
         Map(coordinateRegion: $region, annotationItems: [country.capital]) { capital in
             MapPin(coordinate: CLLocationCoordinate2D(
@@ -30,7 +29,7 @@ struct MapView: View {
                     longitude: capital.longitude), tint: .blue)
         }
     }
-    
+
 }
 
 struct MapView_Previews: PreviewProvider {

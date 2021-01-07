@@ -31,7 +31,7 @@ struct CalculatorView: View {
             }
             TextField("Gross Amount", text: $grossAmount)
            // Slider(value: $rate, in: 0...50, step: 1)
-            Text("VAT Rate \(selectedCountry.standardRate, specifier: "%.f")%")
+            Text("Standard \(selectedCountry.name) VAT Rate \(selectedCountry.standardRate, specifier: "%.f")%")
             Button(action: {calculate(rate: selectedCountry.standardRate)}) {
                 Text("Calculate")
             }.disabled(!grossAmount.containsOnlyDigits || grossAmount.isEmpty)
