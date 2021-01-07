@@ -17,16 +17,22 @@ extension String {
 struct CalculatorView: View {
     static let tag: String? = "Calculator"
     @State private var grossAmount = ""
-    @State private var rate = 0.0
     @State private var VAT = 0.0
     @State private var netAmount = 0.0
+    @State private var selectedCountry = Country.austria
+    var countries: [Country]
     var body: some View {
         NavigationView {
         Form {
+            Picker(selection: $selectedCountry, label: Text("Member State")) {
+                ForEach(countries, id: \.self) { country in
+                    Text(country.name)
+                }
+            }
             TextField("Gross Amount", text: $grossAmount)
-            Slider(value: $rate, in: 0...50, step: 1)
-            Text("VAT Rate \(rate, specifier: "%.f")%")
-            Button(action: {calculate(rate: rate)}) {
+           // Slider(value: $rate, in: 0...50, step: 1)
+            Text("VAT Rate \(selectedCountry.standardRate, specifier: "%.f")%")
+            Button(action: {calculate(rate: selectedCountry.standardRate)}) {
                 Text("Calculate")
             }.disabled(!grossAmount.containsOnlyDigits || grossAmount.isEmpty)
             Text("VAT Amount \(VAT, specifier: "%.2f")")
@@ -44,6 +50,6 @@ struct CalculatorView: View {
 
 struct CalculatorView_Previews: PreviewProvider {
     static var previews: some View {
-        CalculatorView()
+        CalculatorView(countries: Country.all)
     }
 }

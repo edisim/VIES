@@ -25,17 +25,10 @@ struct MapView: View {
     
     var body: some View {
         Map(coordinateRegion: $region, annotationItems: [country.capital]) { capital in
-                    MapAnnotation(
-                        coordinate: CLLocationCoordinate2D(
-                            latitude: capital.latitude,
-                            longitude: capital.longitude),
-                        anchorPoint: CGPoint(x: 0.5, y: 0.5)
-                    ) {
-                        Circle()
-                            .stroke(Color.green)
-                            .frame(width: 44, height: 44)
-                    }
-                }
+            MapPin(coordinate: CLLocationCoordinate2D(
+                    latitude: capital.latitude,
+                    longitude: capital.longitude), tint: .blue)
+        }
     }
     
 }
