@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+
+
 struct ValidationView: View {
     static let tag: String? = "Validation"
     @State private var numberVAT = ""
@@ -18,7 +20,7 @@ struct ValidationView: View {
     var body: some View {
         NavigationView {
             Form {
-
+                
                 Picker(selection: $selectedCountry, label: Text("Member State")) {
                     ForEach(countries, id: \.self) { country in
                         Text(country.name)
@@ -30,22 +32,28 @@ struct ValidationView: View {
                         TextField("\(numberFormatVAT)", text: $numberVAT)
                             .disableAutocorrection(true)
                             .keyboardType(.numberPad)
-
+                        
                     }
                 }
-
-                Button(action: {validateVAT("\(selectedCountry.countryCode)"+"\(numberVAT)")}) {
-                    Text("Verify")
-                }
-                .disabled(checkInput())
-
+                
             }.navigationBarTitle("VAT Validation")
+            .navigationBarItems(trailing:
+                                    Button(action: {validateVAT("\(selectedCountry.countryCode)"+"\(numberVAT)")}) {
+                                        Text("Verify")
+                                    }
+                                    .disabled(checkInput())
+            )
 
+            
         }.sheet(isPresented: $showingSheet) {
             ValidationSheetView(response: response)
         }
-    }
+        .onTapGesture {
+            self.hideKeyboard()
+        }
 
+    }
+    
     func checkInput() -> Bool {
         //TODO: Input must be Integer
         var baseRule: Bool {
@@ -55,7 +63,7 @@ struct ValidationView: View {
                 return false
             }
         }
-
+        
         switch selectedCountry {
         case .austria:
             if baseRule || numberVAT.first != "U"  || numberVAT.count != 9 {
@@ -118,7 +126,7 @@ struct ValidationView: View {
             } else {
                 return false
             }
-
+            
         // 11 characters. May include alphabetical characters (any except O or I) as first or second or first and second characters.
         case .france:
             if baseRule || numberVAT.count != 11 {
@@ -126,7 +134,7 @@ struct ValidationView: View {
             } else {
                 return false
             }
-
+            
         //8 or 9 characters. Includes one or two alphabetical characters (last, or second and last, or last 2).
         case .ireland:
             if baseRule || numberVAT.count != 9 && numberVAT.count != 8 {
@@ -134,7 +142,7 @@ struct ValidationView: View {
             } else {
                 return false
             }
-
+            
         // 12 characters. The tenth character is always B.
         case .netherlands:
             if baseRule || numberVAT.count != 12 {
@@ -142,7 +150,7 @@ struct ValidationView: View {
             } else {
                 return false
             }
-
+            
         default:
             if baseRule || numberVAT.count != 12 {
                 return true
@@ -150,18 +158,19 @@ struct ValidationView: View {
                 return false
             }
         }
-
+        
     }
-
+    
     func validateVAT(_ VAT: String) {
+        self.hideKeyboard()
 
         let semaphore = DispatchSemaphore(value: 0)
         let url: URL? = URL(string: "https://api.vatcomply.com/vat?vat_number=\(VAT)")
         var request = URLRequest(url: (url ?? URL(string: "https://api.vatcomply.com/vat?vat_number="))!)
         request.addValue("__cfduid=db6f000a97f4db915610c6c2043af38c11608235266", forHTTPHeaderField: "Cookie")
-
+        
         request.httpMethod = "GET"
-
+        
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data else {
                 print(String(describing: error))
@@ -173,12 +182,13 @@ struct ValidationView: View {
             print(String(data: data, encoding: .utf8)!)
             semaphore.signal()
         }
-
+        
         task.resume()
         semaphore.wait()
-
+        
         showingSheet = true
-
+        
+        
     }
 }
 
