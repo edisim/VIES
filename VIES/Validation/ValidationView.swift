@@ -16,6 +16,9 @@ struct ValidationView: View {
     @State private var showingSheet = false
     @State private var response = Response(valid: false, vatNumber: "", name: "", address: "", countryCode: "")
     @State private var selectedCountry = Country.austria
+    
+    @State private var isEditing = false
+    
     var countries: [Country]
     var body: some View {
         NavigationView {
@@ -32,26 +35,33 @@ struct ValidationView: View {
                         TextField("\(numberFormatVAT)", text: $numberVAT)
                             .disableAutocorrection(true)
                             .keyboardType(.numberPad)
+                            .onTapGesture {
+                                isEditing = true
+                            }
                         
                     }
                 }
                 
             }.navigationBarTitle("VAT Validation")
-            .navigationBarItems(trailing:
+            .navigationBarItems(leading:
+                                    Button(action: {
+                                        self.hideKeyboard()
+                                        self.isEditing = false
+                                    }) {
+                                        Text("Done")
+                                    }.disabled(!isEditing),
+                                trailing:
                                     Button(action: {validateVAT("\(selectedCountry.countryCode)"+"\(numberVAT)")}) {
                                         Text("Verify")
                                     }
                                     .disabled(checkInput())
             )
-
+            
             
         }.sheet(isPresented: $showingSheet) {
             ValidationSheetView(response: response)
         }
-        .onTapGesture {
-            self.hideKeyboard()
-        }
-
+        
     }
     
     func checkInput() -> Bool {
@@ -162,8 +172,10 @@ struct ValidationView: View {
     }
     
     func validateVAT(_ VAT: String) {
+        
         self.hideKeyboard()
-
+        self.isEditing = false
+        
         let semaphore = DispatchSemaphore(value: 0)
         let url: URL? = URL(string: "https://api.vatcomply.com/vat?vat_number=\(VAT)")
         var request = URLRequest(url: (url ?? URL(string: "https://api.vatcomply.com/vat?vat_number="))!)
