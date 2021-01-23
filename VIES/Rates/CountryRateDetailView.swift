@@ -23,24 +23,24 @@ struct CountryRateDetailView: View {
             }
             HStack {
                 Text("Standard Rate:")
-            Text("\(country.standardRate, specifier: "%.2f")")
+            Text("\(country.rates[0][0], specifier: "%.2f")")
                 .fontWeight(.bold)
             }
             HStack {
                 Text("Reduced Rate:")
-            ForEach(country.reducedRate, id: \.self) { value in
-                Text("\(value, specifier: "%.2f")")
-                    .fontWeight(.bold)
-            }
+//                ForEach(country.rates[1]) { value in
+//                Text("\(value, specifier: "%.2f")")
+//                    .fontWeight(.bold)
+//            }
             }
             HStack {
                 Text("Super Reduced Rate:")
-            Text("\(country.superReducedRate, specifier: "%.2f")")
+            Text("\(country.rates[2][0], specifier: "%.2f")")
                 .fontWeight(.bold)
             }
             HStack {
                 Text("Parking Rate:")
-            Text("\(country.parkingRate, specifier: "%.2f")")
+            Text("\(country.rates[3][0], specifier: "%.2f")")
                 .fontWeight(.bold)
             }
             }.font(.body)

@@ -20,6 +20,7 @@ struct ValidationView: View {
     @State private var isEditing = false
     
     var countries: [Country]
+    
     var body: some View {
         NavigationView {
             Form {

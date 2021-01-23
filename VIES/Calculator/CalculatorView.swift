@@ -37,20 +37,23 @@ struct CalculatorView: View {
                         Text(country.name)
                     }
                 }
+                Picker(selection: $selectedRate, label: Text("Rate type")) {
+                    ForEach(0 ..< rates.count) {
+                        Text(self.rates[$0])
+                    }
+                }
+                Text("\(rates[selectedRate]) VAT Rate is \(selectedCountry.rates[selectedRate][0], specifier: "%.f")%")
+                
                 TextField("Gross Amount", text: $grossAmount)
                     .keyboardType(.numberPad)
                     .onTapGesture {
                         isEditing = true
                     }
                 // Slider(value: $rate, in: 0...50, step: 1)
-                Text("Standard \(selectedCountry.name) VAT Rate \(selectedCountry.standardRate, specifier: "%.f")%")
-                Picker(selection: $selectedRate, label: Text("Rate type")) {
-                    ForEach(0 ..< rates.count) {
-                        Text(self.rates[$0])
-                    }
-                }
+                Section {
                 Text("VAT Amount \(VAT, specifier: "%.2f")")
                 Text("Net Amount \(netAmount, specifier: "%.2f")")
+                }
             }.navigationBarTitle("VAT Calculator")
             .navigationBarItems(leading:
                                     Button(action: {
@@ -60,7 +63,7 @@ struct CalculatorView: View {
                                         Text("Done")
                                     }.disabled(!isEditing),
                                 trailing:
-                                    Button(action: {calculate(standardRate: selectedCountry.standardRate, reducedRate: selectedCountry.reducedRate, superReducedRate: selectedCountry.superReducedRate, parkingRate: selectedCountry.parkingRate)}) {
+                                    Button(action: {calculate(rates: selectedCountry.rates)}) {
                                         Text("Calculate")
                                     }.disabled(!grossAmount.containsOnlyDigits || grossAmount.isEmpty)
             )
@@ -69,14 +72,25 @@ struct CalculatorView: View {
         
     }
     
-    func calculate(standardRate: Double, reducedRate: [Double], superReducedRate: Double, parkingRate: Double) {
+    func calculate(rates: [[Double]]) {
         
         self.hideKeyboard()
         self.isEditing = false
         
-        VAT = Double(grossAmount)! * (standardRate/100)
-        netAmount = Double(grossAmount)! - VAT
-        
+        switch selectedRate {
+        case 0:
+            VAT = Double(grossAmount)! * (rates[0][0]/100)
+            netAmount = Double(grossAmount)! - VAT
+        case 1:
+            VAT = Double(grossAmount)! * (rates[1][0]/100)
+            netAmount = Double(grossAmount)! - VAT
+        case 2:
+            VAT = Double(grossAmount)! * (rates[2][0]/100)
+            netAmount = Double(grossAmount)! - VAT
+        default:
+            VAT = Double(grossAmount)! * (rates[3][0]/100)
+            netAmount = Double(grossAmount)! - VAT
+        }
         
     }
 }
