@@ -35,7 +35,6 @@ struct ValidationView: View {
                         Text(selectedCountry.countryCode)
                         TextField("\(numberFormatVAT)", text: $numberVAT)
                             .disableAutocorrection(true)
-                            .keyboardType(.numberPad)
                             .onTapGesture {
                                 isEditing = true
                             }

@@ -27,6 +27,8 @@ struct CalculatorView: View {
     @State private var selectedRate = 0
     var rates = ["Standard rate", "Reduced rate", "Super reduced rate", "Parking rate"]
     
+    @State private var selectedReducedRate = 0
+    
     @State private var isEditing = false
     
     var body: some View {
@@ -42,7 +44,15 @@ struct CalculatorView: View {
                         Text(self.rates[$0])
                     }
                 }
-                Text("\(rates[selectedRate]) VAT Rate is \(selectedCountry.rates[selectedRate][0], specifier: "%.f")%")
+                if selectedRate != 1 {
+                    Text("\(rates[selectedRate]) VAT Rate is \(selectedCountry.rates[selectedRate][0], specifier: "%.f")%")
+                } else if selectedRate == 1 {
+//                    Picker(selection: $selectedReducedRate, label: Text("Reduced rate")) {
+//                        ForEach(0 ..< selectedCountry.rates[selectedRate].count) { rate in
+//                            Text("\(rate)")
+//                        }
+//                    }
+                    Text("\(rates[selectedRate]) is \(selectedCountry.rates[selectedRate][0], specifier: "%.f")%")                }
                 
                 TextField("Gross Amount", text: $grossAmount)
                     .keyboardType(.numberPad)
@@ -51,8 +61,8 @@ struct CalculatorView: View {
                     }
                 // Slider(value: $rate, in: 0...50, step: 1)
                 Section {
-                Text("VAT Amount \(VAT, specifier: "%.2f")")
-                Text("Net Amount \(netAmount, specifier: "%.2f")")
+                    Text("VAT Amount \(VAT, specifier: "%.2f")")
+                    Text("Net Amount \(netAmount, specifier: "%.2f")")
                 }
             }.navigationBarTitle("VAT Calculator")
             .navigationBarItems(leading:
