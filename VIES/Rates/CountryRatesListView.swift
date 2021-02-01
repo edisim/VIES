@@ -9,17 +9,22 @@ import SwiftUI
 
 struct CountryRatesListView: View {
     static let tag: String? = "Rates"
+    @State private var searchText = ""
     var countries: [Country]
     var body: some View {
         NavigationView {
-            List {
-                ForEach(countries, id: \.name) { country in
-                    NavigationLink(destination: CountryRateDetailView(country: country)) {
-                        Text(country.name)
-                }
+            VStack {
+                SearchBar(text: $searchText)
+                    .padding(.top, 8)
+                List {
+                    ForEach(countries.filter({ searchText.isEmpty ? true : $0.name.contains(searchText)}), id: \.name) { country in
+                        NavigationLink(destination: CountryRateDetailView(country: country)) {
+                            Text(country.name)
+                        }
+                    }
+                }.listStyle(PlainListStyle())
+                .navigationBarTitle("VAT Rates")
             }
-            }
-            .navigationBarTitle("VAT Rates")
         }
     }
 }
