@@ -11,15 +11,16 @@ struct ContentView: View {
 
     @AppStorage("selectedView") var selectedView: String?
     var validCharacters = NSCharacterSet.capitalizedLetters
+    @State private var selectedCountry = Country.austria
     //TODO: User can save his VAT number so he does not need to enter it every time (USERDEFAULTS)
     var countries = Country.all
     var body: some View {
         TabView(selection: $selectedView) {
-            ValidationView(countries: countries)
+            ValidationView(selectedCountry: $selectedCountry, countries: countries)
                 .tag(ValidationView.tag)
                 .tabItem { Label("Validation", systemImage: "checkmark") }
 
-            CalculatorView(countries: countries)
+            CalculatorView(selectedCountry: $selectedCountry, countries: countries)
                 .tag(CalculatorView.tag)
                 .tabItem { Label("Calculator", systemImage: "percent") }
 

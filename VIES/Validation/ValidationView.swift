@@ -11,15 +11,15 @@ import SwiftUI
 
 struct ValidationView: View {
     static let tag: String? = "Validation"
+    
     @State private var numberVAT = ""
     @State private var numberFormatVAT = ""
     @State private var showingSheet = false
     @State private var response = Response(valid: false, vatNumber: "", name: "", address: "", countryCode: "")
-    @State private var selectedCountry = Country.austria
+    @Binding var selectedCountry: Country
+    var countries: [Country]
     
     @State private var isEditing = false
-    
-    var countries: [Country]
     
     var body: some View {
         NavigationView {
@@ -201,11 +201,5 @@ struct ValidationView: View {
         showingSheet = true
         
         
-    }
-}
-
-struct ValidationView_Previews: PreviewProvider {
-    static var previews: some View {
-        ValidationView(countries: Country.all)
     }
 }

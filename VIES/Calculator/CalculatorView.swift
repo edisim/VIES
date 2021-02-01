@@ -21,7 +21,7 @@ struct CalculatorView: View {
     @State private var VAT = 0.0
     @State private var netAmount = 0.0
     
-    @State private var selectedCountry = Country.austria
+    @Binding var selectedCountry: Country
     var countries: [Country]
     
     @State private var selectedRate = 0
@@ -38,75 +38,70 @@ struct CalculatorView: View {
                     ForEach(countries, id: \.self) { country in
                         Text(country.name)
                     }
+                }.onChange(of: selectedCountry) { newSelectedCountry in
+                    calculate(rates: newSelectedCountry.rates, newAmount: grossAmount, newSelectedRate: selectedRate)
                 }
                 Picker(selection: $selectedRate, label: Text("Rate type")) {
                     ForEach(0 ..< rates.count) {
                         Text(self.rates[$0])
                     }
+                }.onChange(of: selectedRate) { newSelectedRate in
+                    calculate(rates: selectedCountry.rates, newAmount: grossAmount, newSelectedRate: selectedRate)
                 }
-                if selectedRate != 1 {
-                    Text("\(rates[selectedRate]) VAT Rate is \(selectedCountry.rates[selectedRate][0], specifier: "%.f")%")
-                } else if selectedRate == 1 {
-//                    Picker(selection: $selectedReducedRate, label: Text("Reduced rate")) {
-//                        ForEach(0 ..< selectedCountry.rates[selectedRate].count) { rate in
-//                            Text("\(rate)")
-//                        }
-//                    }
-                    Text("\(rates[selectedRate]) is \(selectedCountry.rates[selectedRate][0], specifier: "%.f")%")                }
+                //                if selectedRate != 1 {
+                //                    Text("\(rates[selectedRate]) VAT Rate is \(selectedCountry.rates[selectedRate][0], specifier: "%.f")%")
+                //                } else if selectedRate == 1 {
+                //                    Picker(selection: $selectedReducedRate, label: Text("Reduced rate")) {
+                //                        ForEach(0 ..< selectedCountry.rates[selectedRate].count) { rate in
+                //                            Text("\(rate)")
+                //                        }
+                //                    }
+                //                    Text("\(rates[selectedRate]) is \(selectedCountry.rates[selectedRate][0], specifier: "%.f")%")                }
                 
                 TextField("Gross Amount", text: $grossAmount)
                     .keyboardType(.numberPad)
                     .onTapGesture {
                         isEditing = true
                     }
+                    .onChange(of: grossAmount) { newAmount in
+                        calculate(rates: selectedCountry.rates, newAmount: newAmount, newSelectedRate: selectedRate)
+                    }
                 // Slider(value: $rate, in: 0...50, step: 1)
-                Section {
-                    Text("VAT Amount \(VAT, specifier: "%.2f")")
-                    Text("Net Amount \(netAmount, specifier: "%.2f")")
-                }
+                
+                Text("VAT Amount \(VAT, specifier: "%.2f")")
+                Text("Net Amount \(netAmount, specifier: "%.2f")")
+                
             }.navigationBarTitle("VAT Calculator")
-            .navigationBarItems(leading:
+            .navigationBarItems(trailing:
                                     Button(action: {
                                         self.hideKeyboard()
                                         self.isEditing = false
                                     }) {
                                         Text("Done")
-                                    }.disabled(!isEditing),
-                                trailing:
-                                    Button(action: {calculate(rates: selectedCountry.rates)}) {
-                                        Text("Calculate")
-                                    }.disabled(!grossAmount.containsOnlyDigits || grossAmount.isEmpty)
+                                    }.disabled(!isEditing)
+                                
             )
             
         }
         
     }
     
-    func calculate(rates: [[Double]]) {
+    func calculate(rates: [[Double]], newAmount: String, newSelectedRate: Int) {
         
-        self.hideKeyboard()
-        self.isEditing = false
-        
-        switch selectedRate {
+        switch newSelectedRate {
         case 0:
-            VAT = Double(grossAmount)! * (rates[0][0]/100)
-            netAmount = Double(grossAmount)! - VAT
+            VAT = Double(newAmount)! * (rates[0][0]/100)
+            netAmount = Double(newAmount)! - VAT
         case 1:
-            VAT = Double(grossAmount)! * (rates[1][0]/100)
-            netAmount = Double(grossAmount)! - VAT
+            VAT = Double(newAmount)! * (rates[1][0]/100)
+            netAmount = Double(newAmount)! - VAT
         case 2:
-            VAT = Double(grossAmount)! * (rates[2][0]/100)
-            netAmount = Double(grossAmount)! - VAT
+            VAT = Double(newAmount)! * (rates[2][0]/100)
+            netAmount = Double(newAmount)! - VAT
         default:
-            VAT = Double(grossAmount)! * (rates[3][0]/100)
-            netAmount = Double(grossAmount)! - VAT
+            VAT = Double(newAmount)! * (rates[3][0]/100)
+            netAmount = Double(newAmount)! - VAT
         }
         
-    }
-}
-
-struct CalculatorView_Previews: PreviewProvider {
-    static var previews: some View {
-        CalculatorView(countries: Country.all)
     }
 }
