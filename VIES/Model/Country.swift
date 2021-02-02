@@ -10,7 +10,7 @@ import Foundation
 struct Country: Hashable {
     let name: String
     let countryCode: String
-    let rates: [[Double]]
+    let rates: [String : Array<Double>]
 //    let standardRate: Double
 //    let reducedRate: [Double]
 //    let superReducedRate: Double
@@ -53,7 +53,9 @@ extension Country {
 // [[Standard], [Reduced], [Super], [Parking]]
     static let austria = Country(name: "Austria 🇦🇹",
                                  countryCode: "AT",
-                                 rates: [[20], [10, 13], [0], [13]],
+                                 rates: ["Standard": [20],
+                                         "Reduced": [10, 13],
+                                         "Parking": [13]],
 //                                 standardRate: 20,
 //                                 reducedRate: [10, 13],
 //                                 superReducedRate: 0,
@@ -62,7 +64,9 @@ extension Country {
 
     static let belgium = Country(name: "Belgium 🇧🇪",
                                  countryCode: "BE",
-                                 rates: [[21], [6, 12], [0], [12]],
+                                 rates: ["Standard": [21],
+                                         "Reduced": [6, 12],
+                                         "Parking": [12]],
 //                                 standardRate: 21,
 //                                 reducedRate: [6, 12],
 //                                 superReducedRate: 0,
@@ -71,7 +75,8 @@ extension Country {
 
     static let bulgaria = Country(name: "Bulgaria 🇧🇬",
                                   countryCode: "BG",
-                                  rates: [[20], [9], [0], [0]],
+                                  rates: ["Standard": [20],
+                                          "Reduced": [9]],
 //                                  standardRate: 20,
 //                                  reducedRate: [9],
 //                                  superReducedRate: 0,
@@ -80,7 +85,8 @@ extension Country {
 
     static let cyprus = Country(name: "Cyprus 🇨🇾",
                                 countryCode: "CY",
-                                rates: [[19], [5, 9], [0], [0]],
+                                rates: ["Standard": [19],
+                                        "Reduced": [5, 9]],
 //                                standardRate: 19,
 //                                reducedRate: [5, 9],
 //                                superReducedRate: 0,
@@ -89,7 +95,8 @@ extension Country {
 
     static let czechia = Country(name: "Czechia 🇨🇿",
                                  countryCode: "CZ",
-                                 rates: [[21], [10, 15], [0], [0]],
+                                 rates: ["Standard": [21],
+                                         "Reduced": [10, 15]],
 //                                 standardRate: 21,
 //                                 reducedRate: [10, 15],
 //                                 superReducedRate: 0,
@@ -98,7 +105,8 @@ extension Country {
 
     static let germany = Country(name: "Germany 🇩🇪",
                                  countryCode: "DE",
-                                 rates: [[16], [5], [0], [0]],
+                                 rates: ["Standard": [16],
+                                         "Reduced": [5]],
 //                                 standardRate: 16,
 //                                 reducedRate: [5],
 //                                 superReducedRate: 0,
@@ -107,7 +115,7 @@ extension Country {
 
     static let denmark = Country(name: "Denmark 🇩🇰",
                                  countryCode: "DK",
-                                 rates: [[25], [0], [0], [0]],
+                                 rates: ["Standard": [25]],
 //                                 standardRate: 25,
 //                                 reducedRate: [0],
 //                                 superReducedRate: 0,
@@ -116,7 +124,8 @@ extension Country {
 
     static let estonia = Country(name: "Estonia 🇪🇪",
                                  countryCode: "EE",
-                                 rates: [[20], [9], [0], [0]],
+                                 rates: ["Standard": [20],
+                                         "Reduced": [9]],
 //                                 standardRate: 20,
 //                                 reducedRate: [9],
 //                                 superReducedRate: 0,
@@ -125,7 +134,8 @@ extension Country {
 
     static let greece = Country(name: "Greece 🇬🇷",
                                 countryCode: "EL",
-                                rates: [[24], [6, 13], [0], [0]],
+                                rates: ["Standard": [24],
+                                        "Reduced": [6, 13]],
 //                                standardRate: 24,
 //                                reducedRate: [6, 13],
 //                                superReducedRate: 0,
@@ -134,7 +144,9 @@ extension Country {
 
     static let spain = Country(name: "Spain 🇪🇸",
                                countryCode: "ES",
-                               rates: [[21], [10], [4], [0]],
+                               rates: ["Standard": [21],
+                                       "Reduced": [10],
+                                       "Super reduced": [4]],
 //                               standardRate: 21,
 //                               reducedRate: [10],
 //                               superReducedRate: 4,
@@ -143,7 +155,8 @@ extension Country {
 
     static let finland = Country(name: "Finland 🇫🇮",
                                  countryCode: "FI",
-                                 rates: [[24], [10, 14], [0], [0]],
+                                 rates: ["Standard": [24],
+                                         "Reduced": [10, 14]],
 //                                 standardRate: 24,
 //                                 reducedRate: [10, 14],
 //                                 superReducedRate: 0,
@@ -152,7 +165,9 @@ extension Country {
 
     static let france = Country(name: "France 🇫🇷",
                                 countryCode: "FR",
-                                rates: [[20], [5.5, 10], [2.1], [0]],
+                                rates: ["Standard": [20],
+                                        "Reduced": [5.5, 10],
+                                        "Super reduced": [2.1]],
 //                                standardRate: 20,
 //                                reducedRate: [5.5, 10],
 //                                superReducedRate: 2.1,
@@ -161,7 +176,8 @@ extension Country {
 
     static let croatia = Country(name: "Croatia 🇭🇷",
                                  countryCode: "HR",
-                                 rates: [[25], [5, 13], [0], [0]],
+                                 rates: ["Standard": [25],
+                                         "Reduced": [5, 13]],
 //                                 standardRate: 25,
 //                                 reducedRate: [5, 13],
 //                                 superReducedRate: 0,
@@ -170,7 +186,8 @@ extension Country {
 
     static let hungary = Country(name: "Hungary 🇭🇺",
                                  countryCode: "HU",
-                                 rates: [[27], [5, 18], [0], [0]],
+                                 rates: ["Standard": [27],
+                                         "Reduced": [5, 18]],
 //                                 standardRate: 27,
 //                                 reducedRate: [5, 18],
 //                                 superReducedRate: 0,
@@ -179,7 +196,10 @@ extension Country {
 
     static let ireland = Country(name: "Ireland 🇮🇪",
                                  countryCode: "IE",
-                                 rates: [[23], [9, 13.5], [4.8], [13.5]],
+                                 rates: ["Standard": [23],
+                                         "Reduced": [9, 13.5],
+                                         "Super reduced": [4.8],
+                                         "Parking": [13.5]],
 //                                 standardRate: 23,
 //                                 reducedRate: [9, 13.5],
 //                                 superReducedRate: 4.8,
@@ -188,7 +208,9 @@ extension Country {
 
     static let italy = Country(name: "Italy 🇮🇹",
                                countryCode: "IT",
-                               rates: [[22], [5, 10], [4], [0]],
+                               rates: ["Standard": [22],
+                                       "Reduced": [5, 10],
+                                       "Super reduced": [4]],
 //                               standardRate: 22,
 //                               reducedRate: [5, 10],
 //                               superReducedRate: 4,
@@ -197,7 +219,8 @@ extension Country {
 
     static let lithuania = Country(name: "Lithuania 🇱🇹",
                                    countryCode: "LT",
-                                   rates: [[21], [5, 9], [0], [0]],
+                                   rates: ["Standard": [21],
+                                           "Reduced": [5, 9]],
 //                                   standardRate: 21,
 //                                   reducedRate: [5, 9],
 //                                   superReducedRate: 0,
@@ -206,7 +229,10 @@ extension Country {
 
     static let luxembourg = Country(name: "Luxembourg 🇱🇺",
                                     countryCode: "LU",
-                                    rates: [[17], [8], [3], [14]],
+                                    rates: ["Standard": [17],
+                                            "Reduced": [8],
+                                            "Super reduced": [3],
+                                            "Parking": [14]],
 //                                    standardRate: 17,
 //                                    reducedRate: [8],
 //                                    superReducedRate: 3,
@@ -215,7 +241,8 @@ extension Country {
 
     static let latvia = Country(name: "Latvia 🇱🇻",
                                 countryCode: "LV",
-                                rates: [[21], [12, 5], [0], [0]],
+                                rates: ["Standard": [21],
+                                        "Reduced": [5, 12]],
 //                                standardRate: 21,
 //                                reducedRate: [12, 5],
 //                                superReducedRate: 0,
@@ -224,7 +251,8 @@ extension Country {
 
     static let malta = Country(name: "Malta 🇲🇹",
                                countryCode: "MT",
-                               rates: [[18], [5, 7], [0], [0]],
+                               rates: ["Standard": [18],
+                                       "Reduced": [5, 7]],
 //                               standardRate: 18,
 //                               reducedRate: [5, 7],
 //                               superReducedRate: 0,
@@ -233,7 +261,8 @@ extension Country {
 
     static let netherlands = Country(name: "Netherlands 🇳🇱",
                                      countryCode: "NL",
-                                     rates: [[21], [9], [0], [0]],
+                                     rates: ["Standard": [21],
+                                             "Reduced": [9]],
 //                                     standardRate: 21,
 //                                     reducedRate: [9],
 //                                     superReducedRate: 0,
@@ -242,7 +271,8 @@ extension Country {
 
     static let poland = Country(name: "Poland 🇵🇱",
                                 countryCode: "PL",
-                                rates: [[23], [5, 8], [0], [0]],
+                                rates: ["Standard": [23],
+                                        "Reduced": [5, 8]],
 //                                standardRate: 23,
 //                                reducedRate: [5, 8],
 //                                superReducedRate: 0,
@@ -251,7 +281,9 @@ extension Country {
 
     static let portugal = Country(name: "Portugal 🇵🇹",
                                   countryCode: "PT",
-                                  rates: [[23], [6, 13], [0], [13]],
+                                  rates: ["Standard": [23],
+                                          "Reduced": [6, 13],
+                                          "Parking": [13]],
 //                                  standardRate: 23,
 //                                  reducedRate: [6, 13],
 //                                  superReducedRate: 0,
@@ -260,7 +292,8 @@ extension Country {
 
     static let romania = Country(name: "Romania 🇷🇴",
                                  countryCode: "RO",
-                                 rates: [[19], [5, 9], [0], [0]],
+                                 rates: ["Standard": [19],
+                                         "Reduced": [5, 9]],
 //                                 standardRate: 19,
 //                                 reducedRate: [5, 9],
 //                                 superReducedRate: 0,
@@ -269,7 +302,8 @@ extension Country {
 
     static let sweden = Country(name: "Sweden 🇸🇪",
                                 countryCode: "SE",
-                                rates: [[25], [6, 12], [0], [0]],
+                                rates: ["Standard": [25],
+                                        "Reduced": [6, 12]],
 //                                standardRate: 25,
 //                                reducedRate: [6, 12],
 //                                superReducedRate: 0,
@@ -278,7 +312,8 @@ extension Country {
 
     static let slovenia = Country(name: "Slovenia 🇸🇮",
                                   countryCode: "SI",
-                                  rates: [[22], [9.5], [0], [0]],
+                                  rates: ["Standard": [22],
+                                          "Reduced": [9.5]],
 //                                  standardRate: 22,
 //                                  reducedRate: [9.5],
 //                                  superReducedRate: 0,
@@ -287,7 +322,8 @@ extension Country {
 
     static let slovakia = Country(name: "Slovakia 🇸🇰",
                                   countryCode: "SK",
-                                  rates: [[20], [10], [0], [0]],
+                                  rates: ["Standard": [20],
+                                          "Reduced": [10]],
 //                                  standardRate: 20,
 //                                  reducedRate: [10],
 //                                  superReducedRate: 0,

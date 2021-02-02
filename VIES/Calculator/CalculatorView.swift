@@ -39,14 +39,14 @@ struct CalculatorView: View {
                         Text(country.name)
                     }
                 }.onChange(of: selectedCountry) { newSelectedCountry in
-                    calculate(rates: newSelectedCountry.rates, newAmount: grossAmount, newSelectedRate: selectedRate)
+//                    calculate(rates: newSelectedCountry.rates, newAmount: grossAmount, newSelectedRate: selectedRate)
                 }
                 Picker(selection: $selectedRate, label: Text("Rate type")) {
                     ForEach(0 ..< rates.count) {
                         Text(self.rates[$0])
                     }
                 }.onChange(of: selectedRate) { newSelectedRate in
-                    calculate(rates: selectedCountry.rates, newAmount: grossAmount, newSelectedRate: selectedRate)
+//                    calculate(rates: selectedCountry.rates, newAmount: grossAmount, newSelectedRate: selectedRate)
                 }
                 //                if selectedRate != 1 {
                 //                    Text("\(rates[selectedRate]) VAT Rate is \(selectedCountry.rates[selectedRate][0], specifier: "%.f")%")
@@ -64,7 +64,7 @@ struct CalculatorView: View {
                         isEditing = true
                     }
                     .onChange(of: grossAmount) { newAmount in
-                        calculate(rates: selectedCountry.rates, newAmount: newAmount, newSelectedRate: selectedRate)
+//                        calculate(rates: selectedCountry.rates, newAmount: newAmount, newSelectedRate: selectedRate)
                     }
                 // Slider(value: $rate, in: 0...50, step: 1)
                 

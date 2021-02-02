@@ -21,28 +21,13 @@ struct CountryRateDetailView: View {
                     Text("\(country.countryCode)")
                         .fontWeight(.bold)
                 }
-                HStack {
-                    Text("Standard Rate:")
-                    Text("\(country.rates[0][0], specifier: "%.2f")")
-                        .fontWeight(.bold)
-                }
-                HStack {
-                    Text("Reduced Rate:")
-                    ForEach(country.rates[1], id: \.self) { value in
-                        Text("\(value, specifier: "%.2f")")
-                            .fontWeight(.bold)
+                ForEach(country.rates.keys.sorted().reversed(), id:\.self) { key in
+                    HStack {
+                        Text("\(key):")
+                        ForEach(country.rates[key]!, id:\.self) { value in
+                            Text("\(value, specifier: "%.2f")")
+                        }
                     }
-                    
-                }
-                HStack {
-                    Text("Super Reduced Rate:")
-                    Text("\(country.rates[2][0], specifier: "%.2f")")
-                        .fontWeight(.bold)
-                }
-                HStack {
-                    Text("Parking Rate:")
-                    Text("\(country.rates[3][0], specifier: "%.2f")")
-                        .fontWeight(.bold)
                 }
             }.font(.body)
             .padding(.leading)
@@ -50,7 +35,7 @@ struct CountryRateDetailView: View {
             MapView(country: country)
         }
     }
-
+    
 }
 
 struct CountryRateDetailView_Previews: PreviewProvider {
