@@ -24,7 +24,7 @@ struct CountryRateDetailView: View {
                 ForEach(country.rates.keys.sorted().reversed(), id:\.self) { key in
                     HStack {
                         Text("\(key):")
-                        ForEach(country.rates[key]!, id:\.self) { value in
+                        ForEach(country.rates[key] ?? [0], id:\.self) { value in
                             Text("\(value, specifier: "%.2f")")
                         }
                     }

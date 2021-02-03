@@ -17,7 +17,7 @@ struct CountryRatesListView: View {
                 SearchBar(text: $searchText)
                     .padding(.top, 8)
                 List {
-                    ForEach(countries.filter({ searchText.isEmpty ? true : $0.name.contains(searchText)}), id: \.name) { country in
+                    ForEach(countries.filter({ searchText.isEmpty ? true : $0.name.contains(searchText)}), id: \.self) { country in
                         NavigationLink(destination: CountryRateDetailView(country: country)) {
                             Text(country.name)
                         }

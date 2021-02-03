@@ -18,6 +18,8 @@ struct ValidationView: View {
     @State private var response = Response(valid: false, vatNumber: "", name: "", address: "", countryCode: "")
     @Binding var selectedCountry: Country
     var countries: [Country]
+    @State private var searchText = ""
+
     
     @State private var isEditing = false
     
@@ -26,7 +28,9 @@ struct ValidationView: View {
             Form {
                 
                 Picker(selection: $selectedCountry, label: Text("Member State")) {
-                    ForEach(countries, id: \.self) { country in
+                    SearchBar(text: $searchText)
+                        .padding(.top, 8)
+                    ForEach(countries.filter({ searchText.isEmpty ? true : $0.name.contains(searchText)}), id: \.self) { country in
                         Text(country.name)
                     }
                 }

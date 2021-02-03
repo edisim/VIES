@@ -20,34 +20,44 @@ struct CalculatorView: View {
     @State private var grossAmount = ""
     @State private var VAT = 0.0
     @State private var netAmount = 0.0
+    @State private var searchText = ""
+    
     
     @Binding var selectedCountry: Country
     var countries: [Country]
-    
-    @State private var selectedRate = 0
-    var rates = ["Standard rate", "Reduced rate", "Super reduced rate", "Parking rate"]
-    
-    @State private var selectedReducedRate = 0
     
     @State private var isEditing = false
     
     var body: some View {
         NavigationView {
             Form {
+                
+                // MARK: Country Picker
                 Picker(selection: $selectedCountry, label: Text("Member State")) {
-                    ForEach(countries, id: \.self) { country in
+                    SearchBar(text: $searchText)
+                        .padding(.top, 8)
+                    ForEach(countries.filter({ searchText.isEmpty ? true : $0.name.contains(searchText)}), id: \.self) { country in
                         Text(country.name)
+                        
                     }
                 }.onChange(of: selectedCountry) { newSelectedCountry in
-//                    calculate(rates: newSelectedCountry.rates, newAmount: grossAmount, newSelectedRate: selectedRate)
+                    //                    calculate(rates: newSelectedCountry.rates, newAmount: grossAmount, newSelectedRate: selectedRate)
                 }
-                Picker(selection: $selectedRate, label: Text("Rate type")) {
-                    ForEach(0 ..< rates.count) {
-                        Text(self.rates[$0])
+                
+                // MARK: Rate Type Picker
+                
+                // MARK: Reduced Rate Picker
+                Picker(selection: $selectedCountry.rates["Reduced"], label: Text("Rate type")) {
+                    ForEach((selectedCountry.rates["Reduced"]?.sorted()) ?? [0], id:\.self) { value in
+                        Text("\(value, specifier: "%.2f")")
                     }
-                }.onChange(of: selectedRate) { newSelectedRate in
-//                    calculate(rates: selectedCountry.rates, newAmount: grossAmount, newSelectedRate: selectedRate)
+                }.onChange(of: selectedCountry.rates["Reduced"]) { newSelectedRate in
+                    print(newSelectedRate ?? [0])
+                    //                    calculate(rates: selectedCountry.rates, newAmount: grossAmount, newSelectedRate: selectedRate)
                 }
+                
+                
+                
                 //                if selectedRate != 1 {
                 //                    Text("\(rates[selectedRate]) VAT Rate is \(selectedCountry.rates[selectedRate][0], specifier: "%.f")%")
                 //                } else if selectedRate == 1 {
@@ -64,7 +74,7 @@ struct CalculatorView: View {
                         isEditing = true
                     }
                     .onChange(of: grossAmount) { newAmount in
-//                        calculate(rates: selectedCountry.rates, newAmount: newAmount, newSelectedRate: selectedRate)
+                        //                        calculate(rates: selectedCountry.rates, newAmount: newAmount, newSelectedRate: selectedRate)
                     }
                 // Slider(value: $rate, in: 0...50, step: 1)
                 
