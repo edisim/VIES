@@ -10,6 +10,8 @@
 		9331774F2598453B00EEE15D /* ValidationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9331774E2598453B00EEE15D /* ValidationView.swift */; };
 		936FF15825A59368006922FA /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936FF15725A59368006922FA /* MapView.swift */; };
 		936FF15C25A5A77C006922FA /* Capitals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936FF15B25A5A77C006922FA /* Capitals.swift */; };
+		9371934625BAB0CC00D4A8B1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9371934525BAB0CC00D4A8B1 /* Extensions.swift */; };
+		937746BD25C822C7005CFB46 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937746BC25C822C7005CFB46 /* SearchBar.swift */; };
 		938F6B722597088C0033BBE3 /* CalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938F6B712597088C0033BBE3 /* CalculatorView.swift */; };
 		939ECD812590441E00014A71 /* ValidationSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939ECD802590441E00014A71 /* ValidationSheetView.swift */; };
 		93CF2584258C6E07007CABA9 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CF2583258C6E07007CABA9 /* Response.swift */; };
@@ -26,6 +28,8 @@
 		9331774E2598453B00EEE15D /* ValidationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationView.swift; sourceTree = "<group>"; };
 		936FF15725A59368006922FA /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		936FF15B25A5A77C006922FA /* Capitals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Capitals.swift; sourceTree = "<group>"; };
+		9371934525BAB0CC00D4A8B1 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		937746BC25C822C7005CFB46 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		938F6B712597088C0033BBE3 /* CalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorView.swift; sourceTree = "<group>"; };
 		939ECD802590441E00014A71 /* ValidationSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationSheetView.swift; sourceTree = "<group>"; };
 		93CF2583258C6E07007CABA9 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
@@ -70,6 +74,7 @@
 		93D92EC4258B30760062BEB3 /* VIES */ = {
 			isa = PBXGroup;
 			children = (
+				9371934525BAB0CC00D4A8B1 /* Extensions.swift */,
 				93D92EC5258B30760062BEB3 /* VIESApp.swift */,
 				93D92EC7258B30760062BEB3 /* ContentView.swift */,
 				93F951F025A2EE75003FC4BB /* Validation */,
@@ -97,6 +102,7 @@
 				93F951EA25A2EB1F003FC4BB /* CountryRatesListView.swift */,
 				93F951F225A2EEB3003FC4BB /* CountryRateDetailView.swift */,
 				936FF15725A59368006922FA /* MapView.swift */,
+				937746BC25C822C7005CFB46 /* SearchBar.swift */,
 			);
 			path = Rates;
 			sourceTree = "<group>";
@@ -197,6 +203,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				937746BD25C822C7005CFB46 /* SearchBar.swift in Sources */,
 				93CF2584258C6E07007CABA9 /* Response.swift in Sources */,
 				93F951F725A2F078003FC4BB /* Country.swift in Sources */,
 				938F6B722597088C0033BBE3 /* CalculatorView.swift in Sources */,
@@ -204,6 +211,7 @@
 				9331774F2598453B00EEE15D /* ValidationView.swift in Sources */,
 				93F951F325A2EEB3003FC4BB /* CountryRateDetailView.swift in Sources */,
 				93D92EC6258B30760062BEB3 /* VIESApp.swift in Sources */,
+				9371934625BAB0CC00D4A8B1 /* Extensions.swift in Sources */,
 				936FF15825A59368006922FA /* MapView.swift in Sources */,
 				93F951EB25A2EB1F003FC4BB /* CountryRatesListView.swift in Sources */,
 				936FF15C25A5A77C006922FA /* Capitals.swift in Sources */,
@@ -347,7 +355,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.NikolaFranicevic.VIES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "VIES VAT Number Validation iOS App";
@@ -373,7 +381,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.NikolaFranicevic.VIES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "VIES VAT Number Validation iOS App";
