@@ -20,9 +20,9 @@ struct ContentView: View {
                 .tag(ValidationView.tag)
                 .tabItem { Label("Validation", systemImage: "checkmark") }
 
-            CalculatorView(selectedCountry: $selectedCountry, countries: countries)
-                .tag(CalculatorView.tag)
-                .tabItem { Label("Calculator", systemImage: "percent") }
+//            CalculatorView(selectedCountry: $selectedCountry, countries: countries)
+//                .tag(CalculatorView.tag)
+//                .tabItem { Label("Calculator", systemImage: "percent") }
 
             CountryRatesListView(countries: countries)
                 .tag(CountryRatesListView.tag)
