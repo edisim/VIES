@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9331774F2598453B00EEE15D /* ValidationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9331774E2598453B00EEE15D /* ValidationView.swift */; };
+		934EDEFD2691F33B0090A5C5 /* AppReviewRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934EDEFC2691F33B0090A5C5 /* AppReviewRequest.swift */; };
 		936FF15825A59368006922FA /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936FF15725A59368006922FA /* MapView.swift */; };
 		936FF15C25A5A77C006922FA /* Capitals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936FF15B25A5A77C006922FA /* Capitals.swift */; };
 		9371934625BAB0CC00D4A8B1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9371934525BAB0CC00D4A8B1 /* Extensions.swift */; };
@@ -26,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		9331774E2598453B00EEE15D /* ValidationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationView.swift; sourceTree = "<group>"; };
+		934EDEFC2691F33B0090A5C5 /* AppReviewRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReviewRequest.swift; sourceTree = "<group>"; };
 		936FF15725A59368006922FA /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		936FF15B25A5A77C006922FA /* Capitals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Capitals.swift; sourceTree = "<group>"; };
 		9371934525BAB0CC00D4A8B1 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 		93D92EC4258B30760062BEB3 /* VIES */ = {
 			isa = PBXGroup;
 			children = (
+				934EDEFC2691F33B0090A5C5 /* AppReviewRequest.swift */,
 				9371934525BAB0CC00D4A8B1 /* Extensions.swift */,
 				93D92EC5258B30760062BEB3 /* VIESApp.swift */,
 				93D92EC7258B30760062BEB3 /* ContentView.swift */,
@@ -210,6 +213,7 @@
 				93D92EC8258B30760062BEB3 /* ContentView.swift in Sources */,
 				9331774F2598453B00EEE15D /* ValidationView.swift in Sources */,
 				93F951F325A2EEB3003FC4BB /* CountryRateDetailView.swift in Sources */,
+				934EDEFD2691F33B0090A5C5 /* AppReviewRequest.swift in Sources */,
 				93D92EC6258B30760062BEB3 /* VIESApp.swift in Sources */,
 				9371934625BAB0CC00D4A8B1 /* Extensions.swift in Sources */,
 				936FF15825A59368006922FA /* MapView.swift in Sources */,
@@ -355,7 +359,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.5;
+				MARKETING_VERSION = 1.1.6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.NikolaFranicevic.VIES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "VIES VAT Number Validation iOS App";
@@ -381,7 +385,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.5;
+				MARKETING_VERSION = 1.1.6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.NikolaFranicevic.VIES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "VIES VAT Number Validation iOS App";

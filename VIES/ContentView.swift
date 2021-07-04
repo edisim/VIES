@@ -17,6 +17,9 @@ struct ContentView: View {
     var body: some View {
         TabView(selection: $selectedView) {
             ValidationView(selectedCountry: $selectedCountry, countries: countries)
+                .onAppear {
+                    AppReviewRequest.requestReviewIfNeeded()
+                }
                 .tag(ValidationView.tag)
                 .tabItem { Label("Validation", systemImage: "checkmark") }
 

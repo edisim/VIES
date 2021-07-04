@@ -21,7 +21,7 @@ struct ValidationSheetView: View {
                 .renderingMode(.original)
                 .resizable()
                 .frame(width: 100, height: 100, alignment: .center)
-            Text(response.valid ? "Yes, valid VAT number" : "No, invalid VAT number")
+            Text(response.valid ? "Valid VAT number" : "Invalid VAT number")
                 .font(.title)
                 .fontWeight(.heavy)
                 .padding()
