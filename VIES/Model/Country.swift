@@ -10,7 +10,7 @@ import Foundation
 struct Country: Hashable {
     let name: String
     let countryCode: String
-    var rates: [String : Array<Double>]
+    var rates: [String: [Double]]
 //    let standardRate: Double
 //    let reducedRate: [Double]
 //    let superReducedRate: Double

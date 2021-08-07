@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    
+
     @AppStorage("selectedView") var selectedView: String?
     var validCharacters = NSCharacterSet.capitalizedLetters
     @State private var selectedCountry = Country.austria
@@ -22,11 +22,11 @@ struct ContentView: View {
                 }
                 .tag(ValidationView.tag)
                 .tabItem { Label("Validation", systemImage: "checkmark") }
-            
+
             CalculatorView()
                 .tag(CalculatorView.tag)
                 .tabItem { Label("Calculator", systemImage: "percent")}
-            
+
             CountryRatesListView(countries: countries)
                 .tag(CountryRatesListView.tag)
                 .tabItem { Label("Rates", systemImage: "info") }

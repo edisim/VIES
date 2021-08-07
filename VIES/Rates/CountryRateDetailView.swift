@@ -21,21 +21,21 @@ struct CountryRateDetailView: View {
                     Text("\(country.countryCode)")
                         .fontWeight(.bold)
                 }
-                ForEach(country.rates.keys.sorted().reversed(), id:\.self) { key in
+                ForEach(country.rates.keys.sorted().reversed(), id: \.self) { key in
                     HStack {
                         Text("\(key):")
-                        ForEach(country.rates[key] ?? [0], id:\.self) { value in
+                        ForEach(country.rates[key] ?? [0], id: \.self) { value in
                             Text("\(value, specifier: "%.2f")")
                         }
                     }
                 }
             }.font(.body)
             .padding(.leading)
-            
+
             MapView(country: country)
         }
     }
-    
+
 }
 
 struct CountryRateDetailView_Previews: PreviewProvider {

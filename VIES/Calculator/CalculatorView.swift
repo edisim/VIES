@@ -33,13 +33,13 @@ struct CalculatorView: View {
                         Text($0)
                     }
                 }.pickerStyle(SegmentedPickerStyle())
-                
+
                 Slider(value: $rate, in: 0...50)
                 Text("Rate: \(rate, specifier: "%.f")%")
-                
+
                 Text("VAT: \(VAT, specifier: "%.2f")")
                 Text("Net: \(net, specifier: "%.2f")")
-                
+
             }
             .navigationBarTitle("VAT Calculator")
             .navigationBarItems(trailing:
@@ -49,7 +49,7 @@ struct CalculatorView: View {
             )
         }
     }
-    
+
     func calculate(amount: Double) {
         if selectedOperation == "Minus VAT" {
             VAT = amount - (amount / (Double(rate) / 100 + 1))
@@ -58,7 +58,7 @@ struct CalculatorView: View {
             VAT = amount * (Double(rate) / 100)
             net = amount + (amount * (Double(rate) / 100))
         }
-        
+
     }
 }
 
