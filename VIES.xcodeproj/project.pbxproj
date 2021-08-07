@@ -13,9 +13,9 @@
 		936FF15C25A5A77C006922FA /* Capitals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936FF15B25A5A77C006922FA /* Capitals.swift */; };
 		9371934625BAB0CC00D4A8B1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9371934525BAB0CC00D4A8B1 /* Extensions.swift */; };
 		937746BD25C822C7005CFB46 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937746BC25C822C7005CFB46 /* SearchBar.swift */; };
-		938F6B722597088C0033BBE3 /* CalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938F6B712597088C0033BBE3 /* CalculatorView.swift */; };
 		939ECD812590441E00014A71 /* ValidationSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939ECD802590441E00014A71 /* ValidationSheetView.swift */; };
 		93CF2584258C6E07007CABA9 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CF2583258C6E07007CABA9 /* Response.swift */; };
+		93D5CCAF26BECBA10033E7C8 /* CalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D5CCAE26BECBA10033E7C8 /* CalculatorView.swift */; };
 		93D92EC6258B30760062BEB3 /* VIESApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D92EC5258B30760062BEB3 /* VIESApp.swift */; };
 		93D92EC8258B30760062BEB3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D92EC7258B30760062BEB3 /* ContentView.swift */; };
 		93D92ECA258B307A0062BEB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93D92EC9258B307A0062BEB3 /* Assets.xcassets */; };
@@ -32,9 +32,9 @@
 		936FF15B25A5A77C006922FA /* Capitals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Capitals.swift; sourceTree = "<group>"; };
 		9371934525BAB0CC00D4A8B1 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		937746BC25C822C7005CFB46 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
-		938F6B712597088C0033BBE3 /* CalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorView.swift; sourceTree = "<group>"; };
 		939ECD802590441E00014A71 /* ValidationSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationSheetView.swift; sourceTree = "<group>"; };
 		93CF2583258C6E07007CABA9 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		93D5CCAE26BECBA10033E7C8 /* CalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorView.swift; sourceTree = "<group>"; };
 		93D92EC2258B30760062BEB3 /* VIES.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VIES.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93D92EC5258B30760062BEB3 /* VIESApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VIESApp.swift; sourceTree = "<group>"; };
 		93D92EC7258B30760062BEB3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -57,6 +57,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		93D5CCAD26BECB810033E7C8 /* Calculator */ = {
+			isa = PBXGroup;
+			children = (
+				93D5CCAE26BECBA10033E7C8 /* CalculatorView.swift */,
+			);
+			path = Calculator;
+			sourceTree = "<group>";
+		};
 		93D92EB9258B30760062BEB3 = {
 			isa = PBXGroup;
 			children = (
@@ -81,7 +89,7 @@
 				93D92EC5258B30760062BEB3 /* VIESApp.swift */,
 				93D92EC7258B30760062BEB3 /* ContentView.swift */,
 				93F951F025A2EE75003FC4BB /* Validation */,
-				93F951EF25A2EE6C003FC4BB /* Calculator */,
+				93D5CCAD26BECB810033E7C8 /* Calculator */,
 				93F951EE25A2EE65003FC4BB /* Rates */,
 				93F951F525A2F05D003FC4BB /* Model */,
 				93D92EC9258B307A0062BEB3 /* Assets.xcassets */,
@@ -108,14 +116,6 @@
 				937746BC25C822C7005CFB46 /* SearchBar.swift */,
 			);
 			path = Rates;
-			sourceTree = "<group>";
-		};
-		93F951EF25A2EE6C003FC4BB /* Calculator */ = {
-			isa = PBXGroup;
-			children = (
-				938F6B712597088C0033BBE3 /* CalculatorView.swift */,
-			);
-			path = Calculator;
 			sourceTree = "<group>";
 		};
 		93F951F025A2EE75003FC4BB /* Validation */ = {
@@ -209,12 +209,12 @@
 				937746BD25C822C7005CFB46 /* SearchBar.swift in Sources */,
 				93CF2584258C6E07007CABA9 /* Response.swift in Sources */,
 				93F951F725A2F078003FC4BB /* Country.swift in Sources */,
-				938F6B722597088C0033BBE3 /* CalculatorView.swift in Sources */,
 				93D92EC8258B30760062BEB3 /* ContentView.swift in Sources */,
 				9331774F2598453B00EEE15D /* ValidationView.swift in Sources */,
 				93F951F325A2EEB3003FC4BB /* CountryRateDetailView.swift in Sources */,
 				934EDEFD2691F33B0090A5C5 /* AppReviewRequest.swift in Sources */,
 				93D92EC6258B30760062BEB3 /* VIESApp.swift in Sources */,
+				93D5CCAF26BECBA10033E7C8 /* CalculatorView.swift in Sources */,
 				9371934625BAB0CC00D4A8B1 /* Extensions.swift in Sources */,
 				936FF15825A59368006922FA /* MapView.swift in Sources */,
 				93F951EB25A2EB1F003FC4BB /* CountryRatesListView.swift in Sources */,
@@ -359,7 +359,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.6;
+				MARKETING_VERSION = 2.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.NikolaFranicevic.VIES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "VIES VAT Number Validation iOS App";
@@ -385,7 +385,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.6;
+				MARKETING_VERSION = 2.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.NikolaFranicevic.VIES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "VIES VAT Number Validation iOS App";

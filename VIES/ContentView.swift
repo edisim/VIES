@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
-
+    
     @AppStorage("selectedView") var selectedView: String?
     var validCharacters = NSCharacterSet.capitalizedLetters
     @State private var selectedCountry = Country.austria
-    //TODO: User can save his VAT number so he does not need to enter it every time (USERDEFAULTS)
+    #warning("User can save his VAT number so he does not need to enter it every time")
     var countries = Country.all
     var body: some View {
         TabView(selection: $selectedView) {
@@ -22,11 +22,11 @@ struct ContentView: View {
                 }
                 .tag(ValidationView.tag)
                 .tabItem { Label("Validation", systemImage: "checkmark") }
-
-//            CalculatorView(selectedCountry: $selectedCountry, countries: countries)
-//                .tag(CalculatorView.tag)
-//                .tabItem { Label("Calculator", systemImage: "percent") }
-
+            
+            CalculatorView()
+                .tag(CalculatorView.tag)
+                .tabItem { Label("Calculator", systemImage: "percent")}
+            
             CountryRatesListView(countries: countries)
                 .tag(CountryRatesListView.tag)
                 .tabItem { Label("Rates", systemImage: "info") }

@@ -11,7 +11,6 @@ import SwiftUI
 
 struct ValidationView: View {
     static let tag: String? = "Validation"
-    
     @State private var numberVAT = ""
     @State private var numberFormatVAT = ""
     @State private var showingSheet = false
@@ -19,10 +18,9 @@ struct ValidationView: View {
     @Binding var selectedCountry: Country
     var countries: [Country]
     @State private var searchText = ""
-
-    
     @State private var isEditing = false
-    
+    let defaults = UserDefaults.standard
+    let pasteboard = UIPasteboard.general
     var body: some View {
         NavigationView {
             Form {
@@ -34,6 +32,17 @@ struct ValidationView: View {
                         Text(country.name)
                     }
                 }
+                Section(header: Text("Recent Validation")) {
+                    HStack {
+                        Text(defaults.string(forKey: "RecentValidation") ?? "None")
+                        Spacer()
+                        Button(action: {pasteboard.string = defaults.string(forKey: "RecentValidation") ?? "None"}) {
+                            Image(systemName: "doc.on.doc")
+                        }
+                        
+                    }
+                }
+                
                 Section(header: Text("VAT Number")) {
                     HStack {
                         Text(selectedCountry.countryCode)
@@ -44,6 +53,7 @@ struct ValidationView: View {
                             }
                         
                     }
+                    
                 }
                 
             }.navigationBarTitle("VAT Validation")
@@ -69,7 +79,7 @@ struct ValidationView: View {
     }
     
     func checkInput() -> Bool {
-        //TODO: Input must be Integer
+        #warning("Input must be Integer")
         var baseRule: Bool {
             if numberVAT.isEmpty || numberVAT.contains(" ") || numberVAT.count > 12 {
                 return true
@@ -203,6 +213,8 @@ struct ValidationView: View {
         semaphore.wait()
         
         showingSheet = true
+        defaults.set("\(VAT)", forKey: "RecentValidation")
+        
         
         
     }
