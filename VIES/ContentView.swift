@@ -23,7 +23,7 @@ struct ContentView: View {
                 .tag(ValidationView.tag)
                 .tabItem { Label("Validation", systemImage: "checkmark") }
 
-            CalculatorView()
+            CalculatorView(selectedCountry: $selectedCountry, countries: countries)
                 .tag(CalculatorView.tag)
                 .tabItem { Label("Calculator", systemImage: "percent")}
 

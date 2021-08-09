@@ -21,21 +21,30 @@ struct CountryRateDetailView: View {
                     Text("\(country.countryCode)")
                         .fontWeight(.bold)
                 }
-                ForEach(country.rates.keys.sorted().reversed(), id: \.self) { key in
+                Text("Standard rate: \(country.standardRate, specifier: "%.f")%")
+                if country.reducedRate[0] != 0 {
                     HStack {
-                        Text("\(key):")
-                        ForEach(country.rates[key] ?? [0], id: \.self) { value in
-                            Text("\(value, specifier: "%.2f")")
+                        Text("Reduced rate: ")
+                        ForEach(country.reducedRate, id: \.self) { rate in
+                            Text("\(rate, specifier: "%.f")%")
                         }
                     }
                 }
+                if country.superReducedRate != 0 {
+                    Text("Super reduced rate: \(country.superReducedRate, specifier: "%.f")%")
+                }
+                if country.parkingRate != 0 {
+                    Text("Parking rate: \(country.parkingRate, specifier: "%.f")%")
+                }
+                
+                
             }.font(.body)
             .padding(.leading)
-
+            
             MapView(country: country)
         }
     }
-
+    
 }
 
 struct CountryRateDetailView_Previews: PreviewProvider {

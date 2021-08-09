@@ -13,57 +13,68 @@ extension String {
 
 import SwiftUI
 
+
 struct CalculatorView: View {
     static let tag: String? = "Calculator"
-    @State private var amount = ""
+    @State private var amount = "0"
     var operations = ["Minus VAT", "Plus VAT"]
     @State private var selectedOperation = "Minus VAT"
+    @State private var selectedRate: Double = 0
     @State private var net: Double = 0
     @State private var VAT: Double = 0
     @State private var rate: Double = 0
+    @Binding var selectedCountry: Country
+    var countries: [Country]
+    @State private var searchText = ""
     var body: some View {
         NavigationView {
             Form {
-                HStack {
-                    Text("Amount:")
-                    TextField("", text: $amount)
+                Section {
+                    HStack {
+                        TextField("", text: $amount)
+                            .disableAutocorrection(true)
+                            .keyboardType(.decimalPad)
+                            .font(Font.title.weight(.bold))
+                    }
                 }
+                
+                Picker("Member State", selection: $selectedCountry) {
+                    SearchBar(text: $searchText)
+                        .padding(.top, 8)
+                    ForEach(countries.filter({ searchText.isEmpty ? true : $0.name.contains(searchText)}), id: \.self) { country in
+                        Text(country.name)
+                    }.onDisappear {
+                        selectedRate = 0
+                    }
+                }
+                
+                Picker("Rate", selection: $selectedRate) {
+                    ForEach(selectedCountry.rates, id: \.self) { rate in
+                        Text("\(rate, specifier: "%.f")%")
+                    }
+                }.pickerStyle(SegmentedPickerStyle())
+                
+                
+                
                 Picker("Operation", selection: $selectedOperation) {
                     ForEach(operations, id: \.self) {
                         Text($0)
                     }
                 }.pickerStyle(SegmentedPickerStyle())
-
-                Slider(value: $rate, in: 0...50)
-                Text("Rate: \(rate, specifier: "%.f")%")
-
-                Text("VAT: \(VAT, specifier: "%.2f")")
-                Text("Net: \(net, specifier: "%.2f")")
-
+                
+                
+                if selectedOperation == "Minus VAT" && amount.containsOnlyDigits {
+                    Text("VAT -\(Double(amount)! - (Double(amount)! / (selectedRate / 100 + 1)), specifier: "%.2f")")
+                    Text("Net \((Double(amount)! / (selectedRate / 100 + 1)), specifier: "%.2f")")
+                } else if selectedOperation == "Plus VAT" && amount.containsOnlyDigits {
+                    Text("VAT +\(Double(amount)! * (selectedRate / 100), specifier: "%.2f")")
+                    Text("Net \(Double(amount)! + (Double(amount)! * (selectedRate / 100)), specifier: "%.2f")")
+                }
+                
+                
+                
             }
             .navigationBarTitle("VAT Calculator")
-            .navigationBarItems(trailing:
-                                    Button(action: {calculate(amount: Double(amount)!)}) {
-                                        Text("Calculate")
-                                    }.disabled(!amount.containsOnlyDigits || amount.isEmpty)
-            )
         }
-    }
-
-    func calculate(amount: Double) {
-        if selectedOperation == "Minus VAT" {
-            VAT = amount - (amount / (Double(rate) / 100 + 1))
-            net = (amount / (Double(rate) / 100 + 1))
-        } else if selectedOperation == "Plus VAT" {
-            VAT = amount * (Double(rate) / 100)
-            net = amount + (amount * (Double(rate) / 100))
-        }
-
-    }
-}
-
-struct CalculatorView_Previews: PreviewProvider {
-    static var previews: some View {
-        CalculatorView()
     }
 }
