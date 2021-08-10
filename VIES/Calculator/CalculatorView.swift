@@ -13,10 +13,16 @@ extension String {
 
 import SwiftUI
 
-
 struct CalculatorView: View {
     static let tag: String? = "Calculator"
-    @State private var amount = "0"
+    
+    let formatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        return formatter
+    }()
+    
+    @State private var amount: Double = 0
     var operations = ["Minus VAT", "Plus VAT"]
     @State private var selectedOperation = "Minus VAT"
     @State private var selectedRate: Double = 0
@@ -29,13 +35,14 @@ struct CalculatorView: View {
     var body: some View {
         NavigationView {
             Form {
-                Section {
-                    HStack {
-                        TextField("", text: $amount)
-                            .disableAutocorrection(true)
-                            .keyboardType(.decimalPad)
-                            .font(Font.title.weight(.bold))
-                    }
+                HStack {
+                    #warning("u iOS 15 ces moc dismiss keyboard bez problema")
+                    TextField("", value: $amount, formatter: formatter)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .disableAutocorrection(true)
+                        .font(Font.title.weight(.bold))
+                        .padding()
+                    
                 }
                 
                 Picker("Member State", selection: $selectedCountry) {
@@ -54,24 +61,19 @@ struct CalculatorView: View {
                     }
                 }.pickerStyle(SegmentedPickerStyle())
                 
-                
-                
                 Picker("Operation", selection: $selectedOperation) {
                     ForEach(operations, id: \.self) {
                         Text($0)
                     }
                 }.pickerStyle(SegmentedPickerStyle())
                 
-                
-                if selectedOperation == "Minus VAT" && amount.containsOnlyDigits {
-                    Text("VAT -\(Double(amount)! - (Double(amount)! / (selectedRate / 100 + 1)), specifier: "%.2f")")
-                    Text("Net \((Double(amount)! / (selectedRate / 100 + 1)), specifier: "%.2f")")
-                } else if selectedOperation == "Plus VAT" && amount.containsOnlyDigits {
-                    Text("VAT +\(Double(amount)! * (selectedRate / 100), specifier: "%.2f")")
-                    Text("Net \(Double(amount)! + (Double(amount)! * (selectedRate / 100)), specifier: "%.2f")")
+                if selectedOperation == "Minus VAT" {
+                    Text("VAT -\(amount - (amount / (selectedRate / 100 + 1)), specifier: "%.2f")")
+                    Text("Net \((amount / (selectedRate / 100 + 1)), specifier: "%.2f")")
+                } else if selectedOperation == "Plus VAT" {
+                    Text("VAT +\(amount * (selectedRate / 100), specifier: "%.2f")")
+                    Text("Net \(amount + (amount * (selectedRate / 100)), specifier: "%.2f")")
                 }
-                
-                
                 
             }
             .navigationBarTitle("VAT Calculator")

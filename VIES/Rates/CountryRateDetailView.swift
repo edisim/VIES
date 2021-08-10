@@ -36,15 +36,14 @@ struct CountryRateDetailView: View {
                 if country.parkingRate != 0 {
                     Text("Parking rate: \(country.parkingRate, specifier: "%.f")%")
                 }
-                
-                
+
             }.font(.body)
             .padding(.leading)
-            
+
             MapView(country: country)
         }
     }
-    
+
 }
 
 struct CountryRateDetailView_Previews: PreviewProvider {
