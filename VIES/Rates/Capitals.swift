@@ -1,10 +1,3 @@
-//
-//  Capitals.swift
-//  VIES
-//
-//  Created by Master Family on 06/01/2021.
-//
-
 import Foundation
 import MapKit
 

@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9303D37126C3C186001B9A38 /* SettingsItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9303D37026C3C186001B9A38 /* SettingsItems.swift */; };
+		9303D37526C3C302001B9A38 /* SettingsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9303D37426C3C302001B9A38 /* SettingsListView.swift */; };
+		9303D37826C3C314001B9A38 /* SettingsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9303D37726C3C314001B9A38 /* SettingsRowView.swift */; };
+		9303D39226C4E26E001B9A38 /* OnboardingScreens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9303D39126C4E26E001B9A38 /* OnboardingScreens.swift */; };
+		9303D39526C4E576001B9A38 /* OnboardCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9303D39426C4E576001B9A38 /* OnboardCard.swift */; };
+		9303D39826C4E9AE001B9A38 /* OnboardSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9303D39726C4E9AE001B9A38 /* OnboardSet.swift */; };
+		9303D39B26C4EBF6001B9A38 /* OnboardingCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9303D39A26C4EBF6001B9A38 /* OnboardingCardView.swift */; };
+		9303D3A026C53BD2001B9A38 /* OnboardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9303D39F26C53BD2001B9A38 /* OnboardData.swift */; };
 		9331774F2598453B00EEE15D /* ValidationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9331774E2598453B00EEE15D /* ValidationView.swift */; };
 		934EDEFD2691F33B0090A5C5 /* AppReviewRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934EDEFC2691F33B0090A5C5 /* AppReviewRequest.swift */; };
 		936FF15825A59368006922FA /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936FF15725A59368006922FA /* MapView.swift */; };
@@ -26,6 +34,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9303D37026C3C186001B9A38 /* SettingsItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsItems.swift; sourceTree = "<group>"; };
+		9303D37426C3C302001B9A38 /* SettingsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsListView.swift; sourceTree = "<group>"; };
+		9303D37726C3C314001B9A38 /* SettingsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRowView.swift; sourceTree = "<group>"; };
+		9303D39126C4E26E001B9A38 /* OnboardingScreens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScreens.swift; sourceTree = "<group>"; };
+		9303D39426C4E576001B9A38 /* OnboardCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardCard.swift; sourceTree = "<group>"; };
+		9303D39726C4E9AE001B9A38 /* OnboardSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardSet.swift; sourceTree = "<group>"; };
+		9303D39A26C4EBF6001B9A38 /* OnboardingCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCardView.swift; sourceTree = "<group>"; };
+		9303D39F26C53BD2001B9A38 /* OnboardData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardData.swift; sourceTree = "<group>"; };
 		9331774E2598453B00EEE15D /* ValidationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationView.swift; sourceTree = "<group>"; };
 		934EDEFC2691F33B0090A5C5 /* AppReviewRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReviewRequest.swift; sourceTree = "<group>"; };
 		936FF15725A59368006922FA /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
@@ -57,6 +73,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9303D36A26C3C151001B9A38 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				9303D37426C3C302001B9A38 /* SettingsListView.swift */,
+				9303D37726C3C314001B9A38 /* SettingsRowView.swift */,
+				9303D37026C3C186001B9A38 /* SettingsItems.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		9303D38F26C4DBAC001B9A38 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				9303D39426C4E576001B9A38 /* OnboardCard.swift */,
+				9303D39F26C53BD2001B9A38 /* OnboardData.swift */,
+				9303D39726C4E9AE001B9A38 /* OnboardSet.swift */,
+				9303D39126C4E26E001B9A38 /* OnboardingScreens.swift */,
+				9303D39A26C4EBF6001B9A38 /* OnboardingCardView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
 		93D5CCAD26BECB810033E7C8 /* Calculator */ = {
 			isa = PBXGroup;
 			children = (
@@ -84,14 +122,16 @@
 		93D92EC4258B30760062BEB3 /* VIES */ = {
 			isa = PBXGroup;
 			children = (
-				934EDEFC2691F33B0090A5C5 /* AppReviewRequest.swift */,
-				9371934525BAB0CC00D4A8B1 /* Extensions.swift */,
 				93D92EC5258B30760062BEB3 /* VIESApp.swift */,
 				93D92EC7258B30760062BEB3 /* ContentView.swift */,
+				9371934525BAB0CC00D4A8B1 /* Extensions.swift */,
+				934EDEFC2691F33B0090A5C5 /* AppReviewRequest.swift */,
+				93F951F625A2F078003FC4BB /* Country.swift */,
 				93F951F025A2EE75003FC4BB /* Validation */,
 				93D5CCAD26BECB810033E7C8 /* Calculator */,
 				93F951EE25A2EE65003FC4BB /* Rates */,
-				93F951F525A2F05D003FC4BB /* Model */,
+				9303D36A26C3C151001B9A38 /* Settings */,
+				9303D38F26C4DBAC001B9A38 /* Onboarding */,
 				93D92EC9258B307A0062BEB3 /* Assets.xcassets */,
 				93D92ECE258B307A0062BEB3 /* Info.plist */,
 				93D92ECB258B307A0062BEB3 /* Preview Content */,
@@ -113,6 +153,7 @@
 				93F951EA25A2EB1F003FC4BB /* CountryRatesListView.swift */,
 				93F951F225A2EEB3003FC4BB /* CountryRateDetailView.swift */,
 				936FF15725A59368006922FA /* MapView.swift */,
+				936FF15B25A5A77C006922FA /* Capitals.swift */,
 				937746BC25C822C7005CFB46 /* SearchBar.swift */,
 			);
 			path = Rates;
@@ -123,18 +164,9 @@
 			children = (
 				9331774E2598453B00EEE15D /* ValidationView.swift */,
 				939ECD802590441E00014A71 /* ValidationSheetView.swift */,
+				93CF2583258C6E07007CABA9 /* Response.swift */,
 			);
 			path = Validation;
-			sourceTree = "<group>";
-		};
-		93F951F525A2F05D003FC4BB /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				93CF2583258C6E07007CABA9 /* Response.swift */,
-				93F951F625A2F078003FC4BB /* Country.swift */,
-				936FF15B25A5A77C006922FA /* Capitals.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,13 +241,21 @@
 				937746BD25C822C7005CFB46 /* SearchBar.swift in Sources */,
 				93CF2584258C6E07007CABA9 /* Response.swift in Sources */,
 				93F951F725A2F078003FC4BB /* Country.swift in Sources */,
+				9303D3A026C53BD2001B9A38 /* OnboardData.swift in Sources */,
+				9303D37126C3C186001B9A38 /* SettingsItems.swift in Sources */,
+				9303D39826C4E9AE001B9A38 /* OnboardSet.swift in Sources */,
 				93D92EC8258B30760062BEB3 /* ContentView.swift in Sources */,
 				9331774F2598453B00EEE15D /* ValidationView.swift in Sources */,
 				93F951F325A2EEB3003FC4BB /* CountryRateDetailView.swift in Sources */,
 				934EDEFD2691F33B0090A5C5 /* AppReviewRequest.swift in Sources */,
 				93D92EC6258B30760062BEB3 /* VIESApp.swift in Sources */,
+				9303D37526C3C302001B9A38 /* SettingsListView.swift in Sources */,
+				9303D39226C4E26E001B9A38 /* OnboardingScreens.swift in Sources */,
 				93D5CCAF26BECBA10033E7C8 /* CalculatorView.swift in Sources */,
+				9303D37826C3C314001B9A38 /* SettingsRowView.swift in Sources */,
 				9371934625BAB0CC00D4A8B1 /* Extensions.swift in Sources */,
+				9303D39B26C4EBF6001B9A38 /* OnboardingCardView.swift in Sources */,
+				9303D39526C4E576001B9A38 /* OnboardCard.swift in Sources */,
 				936FF15825A59368006922FA /* MapView.swift in Sources */,
 				93F951EB25A2EB1F003FC4BB /* CountryRatesListView.swift in Sources */,
 				936FF15C25A5A77C006922FA /* Capitals.swift in Sources */,

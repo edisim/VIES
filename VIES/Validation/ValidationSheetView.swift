@@ -1,10 +1,3 @@
-//
-//  ValidationSheetView.swift
-//  VIES
-//
-//  Created by Master Family on 21/12/2020.
-//
-
 import SwiftUI
 
 struct ValidationSheetView: View {

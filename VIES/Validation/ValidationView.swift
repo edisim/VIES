@@ -1,10 +1,3 @@
-//
-//  ValidationView.swift
-//  VIES
-//
-//  Created by Master Family on 27/12/2020.
-//
-
 import SwiftUI
 
 struct ValidationView: View {
@@ -55,14 +48,7 @@ struct ValidationView: View {
                 }
 
             }.navigationBarTitle("VAT Validation")
-            .navigationBarItems(leading:
-                                    Button(action: {
-                                        self.hideKeyboard()
-                                        self.isEditing = false
-                                    }) {
-                                        Text("Done")
-                                    }.disabled(!isEditing),
-                                trailing:
+            .navigationBarItems(trailing:
                                     Button(action: {validateVAT("\(selectedCountry.countryCode)"+"\(numberVAT)")}) {
                                         Text("Verify")
                                     }
@@ -71,6 +57,9 @@ struct ValidationView: View {
 
         }.sheet(isPresented: $showingSheet) {
             ValidationSheetView(response: response)
+        }
+        .onAppear {
+            AppReviewRequest.requestReviewIfNeeded()
         }
 
     }
@@ -184,7 +173,6 @@ struct ValidationView: View {
 
     func validateVAT(_ VAT: String) {
 
-        self.hideKeyboard()
         self.isEditing = false
 
         let semaphore = DispatchSemaphore(value: 0)

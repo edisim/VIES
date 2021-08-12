@@ -1,10 +1,3 @@
-//
-//  Model.swift
-//  VIES
-//
-//  Created by Master Family on 18/12/2020.
-//
-
 import Foundation
 
 struct Response: Codable {

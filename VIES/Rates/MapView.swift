@@ -1,10 +1,3 @@
-//
-//  MapView.swift
-//  VIES
-//
-//  Created by Master Family on 06/01/2021.
-//
-
 import SwiftUI
 import MapKit
 

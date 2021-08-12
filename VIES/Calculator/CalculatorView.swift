@@ -1,16 +1,3 @@
-//
-//  CalculatorView.swift
-//  VIES
-//
-//  Created by Master Family on 07/08/2021.
-//
-extension String {
-    var containsOnlyDigits: Bool {
-        let notDigits = NSCharacterSet.decimalDigits.inverted
-        return rangeOfCharacter(from: notDigits, options: String.CompareOptions.literal, range: nil) == nil
-    }
-}
-
 import SwiftUI
 
 struct CalculatorView: View {

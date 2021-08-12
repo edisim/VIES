@@ -1,10 +1,3 @@
-//
-//  AppReviewRequest.swift
-//  VIES
-//
-//  Created by Master Family on 04/07/2021.
-//
-
 import SwiftUI
 import StoreKit
 
@@ -19,7 +12,7 @@ enum AppReviewRequest {
         let thisVersion = "\(appVersion) build: \(appBuild)"
         print("Run Count: \(runsSinceLastRequest)")
         print(thisVersion)
-
+        
         if thisVersion != version {
             if runsSinceLastRequest >= treshold {
                 if let scene = UIApplication.shared.connectedScenes.first(where: {$0.activationState == .foregroundActive}) as? UIWindowScene {
@@ -31,6 +24,7 @@ enum AppReviewRequest {
         } else {
             runsSinceLastRequest = 0
         }
-
+        
     }
+    
 }

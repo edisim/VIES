@@ -1,10 +1,3 @@
-//
-//  CountriesListView.swift
-//  VIES
-//
-//  Created by Master Family on 04/01/2021.
-//
-
 import SwiftUI
 
 struct CountryRatesListView: View {

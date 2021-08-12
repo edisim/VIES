@@ -1,10 +1,3 @@
-//
-//  Country.swift
-//  VIES
-//
-//  Created by Master Family on 04/01/2021.
-//
-
 import Foundation
 
 struct Country: Hashable {
