@@ -8,7 +8,7 @@
 </p>
 
 ## Screenshots
-![1](https://github.com/FranicevicNikola/DiscoverRandomQuotes/blob/main/iPhone%2011%20Pro%20Maxgithub.png)
+![1](https://github.com/FranicevicNikola/VIES/blob/main/iPhone%2011%20Pro%20Maxgithub.png)
 
 ---
 
