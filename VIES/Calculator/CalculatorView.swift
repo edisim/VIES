@@ -5,7 +5,7 @@ struct CalculatorView: View {
     
     let formatter: NumberFormatter = {
         let formatter = NumberFormatter()
-        formatter.numberStyle = .decimal
+        formatter.numberStyle = .none
         return formatter
     }()
     

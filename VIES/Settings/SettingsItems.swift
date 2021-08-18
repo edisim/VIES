@@ -18,6 +18,12 @@ struct Items {
              title: "Report A Bug",
              section: .feedback,
              url: "https://nikolafranicevic.com/EUVATNumberVIESFreelance/feedback"),
+        
+        Item(image: "chevron.left.slash.chevron.right",
+             color: .systemGray,
+             title: "Source Code",
+             section: .miscellaneous,
+             url: "https://github.com/FranicevicNikola/VIES"),
 
         Item(image: "globe",
              color: .systemGray,
@@ -39,7 +45,8 @@ struct Items {
              title: "VAT Info",
              section: .help,
              url: "https://ec.europa.eu/taxation_customs/taxation-1/value-added-tax-vat_en")
-        
+
+
     ]
     
     let miscellaneous: [Item]
