@@ -43,7 +43,6 @@ extension Country {
         slovakia
 
     ]
-// [[Standard], [Reduced], [Super], [Parking]]
     static let austria = Country(name: "Austria 🇦🇹",
                                  countryCode: "AT",
                                  standardRate: 20,

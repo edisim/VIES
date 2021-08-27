@@ -6,6 +6,11 @@ class OnboardSet {
     private(set) var width: CGFloat = .infinity
     private(set) var height: CGFloat = .infinity
     
+    init() {
+        print("initialising OnboardSet")
+    }
+    
+    
     func dimensions(width: CGFloat, height: CGFloat) {
         self.width = width
         self.height = height
