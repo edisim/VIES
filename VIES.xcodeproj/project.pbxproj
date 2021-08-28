@@ -78,7 +78,6 @@
 			children = (
 				9303D37426C3C302001B9A38 /* SettingsListView.swift */,
 				9303D37726C3C314001B9A38 /* SettingsRowView.swift */,
-				9303D37026C3C186001B9A38 /* SettingsItems.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -86,13 +85,44 @@
 		9303D38F26C4DBAC001B9A38 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				9303D39426C4E576001B9A38 /* OnboardCard.swift */,
-				9303D39F26C53BD2001B9A38 /* OnboardData.swift */,
-				9303D39726C4E9AE001B9A38 /* OnboardSet.swift */,
 				9303D39126C4E26E001B9A38 /* OnboardingScreens.swift */,
 				9303D39A26C4EBF6001B9A38 /* OnboardingCardView.swift */,
 			);
 			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		9316249726DA255400D94704 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				93F951F625A2F078003FC4BB /* Country.swift */,
+				936FF15B25A5A77C006922FA /* Capitals.swift */,
+				93CF2583258C6E07007CABA9 /* Response.swift */,
+				9303D39426C4E576001B9A38 /* OnboardCard.swift */,
+				9303D39F26C53BD2001B9A38 /* OnboardData.swift */,
+				9303D39726C4E9AE001B9A38 /* OnboardSet.swift */,
+				9303D37026C3C186001B9A38 /* SettingsItems.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9316249826DA255900D94704 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		9316249926DA256100D94704 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				93D92EC7258B30760062BEB3 /* ContentView.swift */,
+				93D5CCAD26BECB810033E7C8 /* Calculator */,
+				9303D38F26C4DBAC001B9A38 /* Onboarding */,
+				9303D36A26C3C151001B9A38 /* Settings */,
+				93F951F025A2EE75003FC4BB /* Validation */,
+				93F951EE25A2EE65003FC4BB /* Rates */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		93D5CCAD26BECB810033E7C8 /* Calculator */ = {
@@ -123,15 +153,11 @@
 			isa = PBXGroup;
 			children = (
 				93D92EC5258B30760062BEB3 /* VIESApp.swift */,
-				93D92EC7258B30760062BEB3 /* ContentView.swift */,
+				9316249726DA255400D94704 /* Model */,
+				9316249926DA256100D94704 /* View */,
+				9316249826DA255900D94704 /* ViewModel */,
 				9371934525BAB0CC00D4A8B1 /* Extensions.swift */,
 				934EDEFC2691F33B0090A5C5 /* AppReviewRequest.swift */,
-				93F951F625A2F078003FC4BB /* Country.swift */,
-				93F951F025A2EE75003FC4BB /* Validation */,
-				93D5CCAD26BECB810033E7C8 /* Calculator */,
-				93F951EE25A2EE65003FC4BB /* Rates */,
-				9303D36A26C3C151001B9A38 /* Settings */,
-				9303D38F26C4DBAC001B9A38 /* Onboarding */,
 				93D92EC9258B307A0062BEB3 /* Assets.xcassets */,
 				93D92ECE258B307A0062BEB3 /* Info.plist */,
 				93D92ECB258B307A0062BEB3 /* Preview Content */,
@@ -153,7 +179,6 @@
 				93F951EA25A2EB1F003FC4BB /* CountryRatesListView.swift */,
 				93F951F225A2EEB3003FC4BB /* CountryRateDetailView.swift */,
 				936FF15725A59368006922FA /* MapView.swift */,
-				936FF15B25A5A77C006922FA /* Capitals.swift */,
 				937746BC25C822C7005CFB46 /* SearchBar.swift */,
 			);
 			path = Rates;
@@ -164,7 +189,6 @@
 			children = (
 				9331774E2598453B00EEE15D /* ValidationView.swift */,
 				939ECD802590441E00014A71 /* ValidationSheetView.swift */,
-				93CF2583258C6E07007CABA9 /* Response.swift */,
 			);
 			path = Validation;
 			sourceTree = "<group>";
@@ -399,7 +423,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.1.2;
+				MARKETING_VERSION = 2.1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.NikolaFranicevic.VIES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "VIES VAT Number Validation iOS App";
@@ -425,7 +449,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.1.2;
+				MARKETING_VERSION = 2.1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.NikolaFranicevic.VIES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "VIES VAT Number Validation iOS App";
