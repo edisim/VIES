@@ -3,16 +3,14 @@ import SwiftUI
 struct CountryRatesListView: View {
     static let tag: String? = "Rates"
     @State private var searchText = ""
-    var countries: [Country]
+    @EnvironmentObject var countryManager: CountryManager
     var body: some View {
         NavigationView {
             VStack {
-                SearchBar(text: $searchText)
-                    .padding(.top, 8)
                 List {
-                    ForEach(countries.filter({ searchText.isEmpty ? true : $0.name.contains(searchText)}), id: \.self) { country in
-                        NavigationLink(destination: CountryRateDetailView(country: country)) {
-                            Text(country.name)
+                    ForEach(0..<countryManager.allCountries.count, id: \.self) { index in
+                        NavigationLink(destination: CountryRateDetailView(country: countryManager.allCountries[index])) {
+                            Text(countryManager.allCountries[index].name)
                         }
                     }
                 }.listStyle(PlainListStyle())
@@ -21,9 +19,9 @@ struct CountryRatesListView: View {
         }
     }
 }
-
-struct CountryRatesListView_Previews: PreviewProvider {
-    static var previews: some View {
-        CountryRatesListView(countries: Country.all)
-    }
-}
+#warning("FIX ALL previews!")
+//struct CountryRatesListView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CountryRatesListView(countries: Country.all)
+//    }
+//}

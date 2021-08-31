@@ -7,16 +7,13 @@ struct OnboardingScreens: View {
         VStack {
             TabView {
                 ForEach(onboardSet.cards) { card in
-                    OnboardingCardView(isShowing: $showOnboarding, card: card, width: onboardSet.width, height: onboardSet.height)
-                        
+                    OnboardingCardView(isShowing: $showOnboarding, card: card, width: onboardSet.width, height: onboardSet.height)        
                 }
             }.tabViewStyle(PageTabViewStyle())
             .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
             
-            Spacer()
-
-        }.edgesIgnoringSafeArea(.all)
+        }.shadow(radius: 5)
+        .edgesIgnoringSafeArea(.all)
         .padding()
-        .padding(.bottom)
     }
 }

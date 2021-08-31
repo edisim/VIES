@@ -2,203 +2,77 @@ import SwiftUI
 
 struct ValidationView: View {
     static let tag: String? = "Validation"
-    @State private var numberVAT = ""
-    @State private var numberFormatVAT = ""
-    @State private var showingSheet = false
-    @State private var response = Response(valid: false, vatNumber: "", name: "", address: "", countryCode: "")
-    @Binding var selectedCountry: Country
-    var countries: [Country]
-    @State private var searchText = ""
-    @State private var isEditing = false
-    let defaults = UserDefaults.standard
-    let pasteboard = UIPasteboard.general
+    
+    @EnvironmentObject var countryManager: CountryManager
+    @StateObject var validationViewModel = ValidationViewModel()
+    @State private var showingSheet: Bool = false
+    @State private var isEditing: Bool = false
+    #warning("TAP ON CURLY BRACE TO SELECT IT")
+    
     var body: some View {
         NavigationView {
             Form {
-
-                Picker(selection: $selectedCountry, label: Text("Member State")) {
-                    SearchBar(text: $searchText)
-                        .padding(.top, 8)
-                    ForEach(countries.filter({ searchText.isEmpty ? true : $0.name.contains(searchText)}), id: \.self) { country in
-                        Text(country.name)
+                
+                Picker("Member State", selection: $countryManager.selectedCountryIndex) {
+                    
+                    ForEach(0..<countryManager.allCountries.count, id: \.self) { index in
+                        Text(countryManager.allCountries[index].name)
                     }
                 }
-                Section(header: Text("Recent Validation")) {
-                    HStack {
-                        Text(defaults.string(forKey: "RecentValidation") ?? "None")
-                        Spacer()
-                        Button(action: {pasteboard.string = defaults.string(forKey: "RecentValidation") ?? "None"}) {
-                            Image(systemName: "doc.on.doc")
-                        }
-
-                    }
-                }
-
                 Section(header: Text("VAT Number")) {
                     HStack {
-                        Text(selectedCountry.countryCode)
-                        TextField("\(numberFormatVAT)", text: $numberVAT)
+                        Text(countryManager.allCountries[countryManager.selectedCountryIndex].countryCode)
+                        TextField("\(validationViewModel.placeholderNumberVAT)", text: $validationViewModel.numberVAT)
                             .disableAutocorrection(true)
                             .onTapGesture {
                                 isEditing = true
                             }
-
+                        
                     }
-
+                    
                 }
-
+                Section(header: Text("Recent Validation")) {
+                    HStack {
+                        Text(settings.string(forKey: "RecentValidation") ?? "None")
+                        Spacer()
+                    }
+                    Button(action: {
+                        validationViewModel.validateVAT(settings.string(forKey: "RecentValidation") ?? "None")
+                        showingSheet = true
+                        
+                    }) {
+                        HStack {
+                            Image(systemName: "arrow.clockwise")
+                            Text("Retry")
+                        }
+                    }.disabled(settings.string(forKey: "RecentValidation") == "None")
+                    Button(action: {pasteboard.string = settings.string(forKey: "RecentValidation") ?? "None"}) {
+                        HStack {
+                            
+                            Image(systemName: "doc.on.doc")
+                            Text("Copy")
+                        }
+                    }.disabled(settings.string(forKey: "RecentValidation") == "None")
+                }
+                
             }.navigationBarTitle("VAT Validation")
             .navigationBarItems(trailing:
-                                    Button(action: {validateVAT("\(selectedCountry.countryCode)"+"\(numberVAT)")}) {
+                                    Button(action: {
+                                        self.isEditing = false
+                                        validationViewModel.validateVAT("\(countryManager.allCountries[countryManager.selectedCountryIndex].countryCode)"+"\(validationViewModel.numberVAT)")
+                                        showingSheet = true
+                                        
+                                    }) {
                                         Text("Verify")
-                                    }
-                                    .disabled(checkInput())
+                                    }.disabled(validationViewModel.checkInput())
             )
-
+            
         }.sheet(isPresented: $showingSheet) {
-            ValidationSheetView(response: response)
+            ValidationSheetView(response: validationViewModel.response)
         }
         .onAppear {
             AppReviewRequest.requestReviewIfNeeded()
         }
-
-    }
-
-    func checkInput() -> Bool {
-        #warning("Input must be Integer")
-        var baseRule: Bool {
-            if numberVAT.isEmpty || numberVAT.contains(" ") || numberVAT.count > 12 {
-                return true
-            } else {
-                return false
-            }
-        }
-
-        switch selectedCountry {
-        case .austria:
-            if baseRule || numberVAT.first != "U"  || numberVAT.count != 9 {
-                return true
-            } else {
-                return false
-            }
-        // Prefix with zero ‘0’ if the customer provides a 9 digit VAT number ZA CASE 1.
-        case .belgium, .bulgaria:
-            if baseRule || numberVAT.count != 10 && numberVAT.count != 9 {
-                return true
-            } else {
-                return false
-            }
-        case .croatia, .italy, .latvia:
-            if baseRule || numberVAT.count != 11 {
-                return true
-            } else {
-                return false
-            }
-        case .cyprus:
-            if baseRule || numberVAT.count != 9 || ((numberVAT.last?.isLetter) != true) {
-                return true
-            } else {
-                return false
-            }
-        case .czechia:
-            if baseRule || numberVAT.count != 10 && numberVAT.count != 9 && numberVAT.count != 8 {
-                return true
-            } else {
-                return false
-            }
-        case .denmark, .finland, .hungary, .luxembourg, .malta, .slovenia :
-            if baseRule || numberVAT.count != 8 {
-                return true
-            } else {
-                return false
-            }
-        case .estonia, .germany, .greece, .portugal, .spain:
-            if baseRule || numberVAT.count != 9 {
-                return true
-            } else {
-                return false
-            }
-        case .poland, .slovakia:
-            if baseRule || numberVAT.count != 10 {
-                return true
-            } else {
-                return false
-            }
-        case .romania:
-            if baseRule || numberVAT.count > 10 || numberVAT.count < 2 {
-                return true
-            } else {
-                return false
-            }
-        case .lithuania:
-            if baseRule || numberVAT.count != 12 && numberVAT.count != 9 {
-                return true
-            } else {
-                return false
-            }
-
-        // 11 characters. May include alphabetical characters (any except O or I) as first or second or first and second characters.
-        case .france:
-            if baseRule || numberVAT.count != 11 {
-                return true
-            } else {
-                return false
-            }
-
-        //8 or 9 characters. Includes one or two alphabetical characters (last, or second and last, or last 2).
-        case .ireland:
-            if baseRule || numberVAT.count != 9 && numberVAT.count != 8 {
-                return true
-            } else {
-                return false
-            }
-
-        // 12 characters. The tenth character is always B.
-        case .netherlands:
-            if baseRule || numberVAT.count != 12 {
-                return true
-            } else {
-                return false
-            }
-
-        default:
-            if baseRule || numberVAT.count != 12 {
-                return true
-            } else {
-                return false
-            }
-        }
-
-    }
-
-    func validateVAT(_ VAT: String) {
-
-        self.isEditing = false
-
-        let semaphore = DispatchSemaphore(value: 0)
-        let url: URL? = URL(string: "https://api.vatcomply.com/vat?vat_number=\(VAT)")
-        var request = URLRequest(url: (url ?? URL(string: "https://api.vatcomply.com/vat?vat_number="))!)
-        request.addValue("__cfduid=db6f000a97f4db915610c6c2043af38c11608235266", forHTTPHeaderField: "Cookie")
-
-        request.httpMethod = "GET"
-
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let data = data else {
-                print(String(describing: error))
-                semaphore.signal()
-                return
-            }
-            let decodedResponse = try? JSONDecoder().decode(Response.self, from: data)
-            self.response = decodedResponse ?? Response(valid: false, vatNumber: "\(numberVAT)", name: "N/A", address: "N/A", countryCode: selectedCountry.countryCode)
-            print(String(data: data, encoding: .utf8)!)
-            semaphore.signal()
-        }
-
-        task.resume()
-        semaphore.wait()
-
-        showingSheet = true
-        defaults.set("\(VAT)", forKey: "RecentValidation")
-
+        
     }
 }

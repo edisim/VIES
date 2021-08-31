@@ -14,7 +14,7 @@ struct MapView: View {
             longitudeDelta: 50
         )
     )
-
+    @EnvironmentObject var countryManager: CountryManager
     var body: some View {
         Map(coordinateRegion: $region, annotationItems: [country.capital]) { capital in
             MapPin(coordinate: CLLocationCoordinate2D(
@@ -25,8 +25,8 @@ struct MapView: View {
 
 }
 
-struct MapView_Previews: PreviewProvider {
-    static var previews: some View {
-        MapView(country: Country.austria)
-    }
-}
+//struct MapView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MapView(country: Country.austria)
+//    }
+//}

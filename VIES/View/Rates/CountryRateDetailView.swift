@@ -39,8 +39,8 @@ struct CountryRateDetailView: View {
 
 }
 
-struct CountryRateDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        CountryRateDetailView(country: Country.austria)
-    }
-}
+//struct CountryRateDetailView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CountryRateDetailView(country: Country.austria)
+//    }
+//}
