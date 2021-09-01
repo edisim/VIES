@@ -30,7 +30,7 @@
 		93CF2584258C6E07007CABA9 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CF2583258C6E07007CABA9 /* Response.swift */; };
 		93D5CCAF26BECBA10033E7C8 /* CalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D5CCAE26BECBA10033E7C8 /* CalculatorView.swift */; };
 		93D92EC6258B30760062BEB3 /* VIESApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D92EC5258B30760062BEB3 /* VIESApp.swift */; };
-		93D92EC8258B30760062BEB3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D92EC7258B30760062BEB3 /* ContentView.swift */; };
+		93D92EC8258B30760062BEB3 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D92EC7258B30760062BEB3 /* MainView.swift */; };
 		93D92ECA258B307A0062BEB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93D92EC9258B307A0062BEB3 /* Assets.xcassets */; };
 		93D92ECD258B307A0062BEB3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93D92ECC258B307A0062BEB3 /* Preview Assets.xcassets */; };
 		93F951EB25A2EB1F003FC4BB /* CountryRatesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F951EA25A2EB1F003FC4BB /* CountryRatesListView.swift */; };
@@ -63,7 +63,7 @@
 		93D5CCAE26BECBA10033E7C8 /* CalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorView.swift; sourceTree = "<group>"; };
 		93D92EC2258B30760062BEB3 /* VIES.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VIES.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93D92EC5258B30760062BEB3 /* VIESApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VIESApp.swift; sourceTree = "<group>"; };
-		93D92EC7258B30760062BEB3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		93D92EC7258B30760062BEB3 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		93D92EC9258B307A0062BEB3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		93D92ECC258B307A0062BEB3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		93D92ECE258B307A0062BEB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -128,7 +128,7 @@
 		9316249926DA256100D94704 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				93D92EC7258B30760062BEB3 /* ContentView.swift */,
+				93D92EC7258B30760062BEB3 /* MainView.swift */,
 				93D5CCAD26BECB810033E7C8 /* Calculator */,
 				9303D38F26C4DBAC001B9A38 /* Onboarding */,
 				9303D36A26C3C151001B9A38 /* Settings */,
@@ -292,7 +292,7 @@
 				939C220A26DDED5500677BAF /* CalculatorViewModel.swift in Sources */,
 				9303D37126C3C186001B9A38 /* SettingsItems.swift in Sources */,
 				9303D39826C4E9AE001B9A38 /* OnboardSet.swift in Sources */,
-				93D92EC8258B30760062BEB3 /* ContentView.swift in Sources */,
+				93D92EC8258B30760062BEB3 /* MainView.swift in Sources */,
 				939C220326DDE40B00677BAF /* IconButtonStyle.swift in Sources */,
 				9331774F2598453B00EEE15D /* ValidationView.swift in Sources */,
 				93F951F325A2EEB3003FC4BB /* CountryRateDetailView.swift in Sources */,
@@ -441,7 +441,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"VIES/Preview Content\"";
 				DEVELOPMENT_TEAM = LJF744GC3Q;
 				ENABLE_PREVIEWS = YES;
@@ -467,7 +467,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"VIES/Preview Content\"";
 				DEVELOPMENT_TEAM = LJF744GC3Q;
 				ENABLE_PREVIEWS = YES;

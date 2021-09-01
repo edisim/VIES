@@ -2,7 +2,7 @@ import SwiftUI
 import StoreKit
 
 enum AppReviewRequest {
-    static var treshold = 3
+    static var treshold = 4
     @AppStorage("runsSinceLastRequest") static var runsSinceLastRequest = 0
     @AppStorage("version") static var version = ""
     static func requestReviewIfNeeded() {

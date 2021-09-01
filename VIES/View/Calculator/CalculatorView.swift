@@ -33,10 +33,10 @@ struct CalculatorView: View {
                     
                     ForEach(0..<countryManager.allCountries.count, id: \.self) { index in
                         Text(countryManager.allCountries[index].name)
-                    }.onDisappear {
-                        countryManager.selectedRateIndex = 0
+
                     }
                 }.onChange(of: countryManager.selectedCountryIndex, perform: { value in
+                    countryManager.selectedRateIndex = 0
                     calculatorViewModel.calculate(rate: countryManager.allCountries[countryManager.selectedCountryIndex].rates[countryManager.selectedRateIndex])
                 })
                 
