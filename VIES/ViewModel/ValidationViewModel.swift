@@ -12,7 +12,7 @@ class ValidationViewModel: ObservableObject {
     
     @Published var numberVAT: String = UserDefaults.standard.string(forKey: "numberVAT") ?? "" {
         didSet {
-            settings.set(numberVAT, forKey: "numberVAT")
+            UserDefaults.standard.set(numberVAT, forKey: "numberVAT")
             print("setting numberVAT - \(numberVAT) - UserDefaults")
         }
     }
@@ -159,7 +159,7 @@ class ValidationViewModel: ObservableObject {
 
         }.resume()
         #warning("needs a better way!")
-        settings.set("\(VAT)", forKey: "RecentValidation")
+        UserDefaults.standard.set("\(VAT)", forKey: "RecentValidation")
         print("setting VAT - \(VAT) - UserDefaults")
     }
 

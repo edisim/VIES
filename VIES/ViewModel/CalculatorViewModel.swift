@@ -12,13 +12,13 @@ class CalculatorViewModel: ObservableObject {
     
     @Published var amount: Double = UserDefaults.standard.double(forKey: "amount") {
         didSet {
-            settings.setValue(amount, forKey: "amount")
+            UserDefaults.standard.setValue(amount, forKey: "amount")
             print("setting amount - \(amount) - UserDefaults")
         }
     }
     @Published var selectedOperation: String = UserDefaults.standard.string(forKey: "selectedOperation") ?? "Minus VAT" {
         didSet {
-            settings.setValue(selectedOperation, forKey: "selectedOperation")
+            UserDefaults.standard.setValue(selectedOperation, forKey: "selectedOperation")
             print("setting selectedOperation - \(selectedOperation) - UserDefaults")
         }
     }

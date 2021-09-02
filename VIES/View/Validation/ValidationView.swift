@@ -33,11 +33,11 @@ struct ValidationView: View {
                 }
                 Section(header: Text("Recent Validation")) {
                     HStack {
-                        Text(settings.string(forKey: "RecentValidation") ?? "None")
+                        Text(UserDefaults.standard.string(forKey: "RecentValidation") ?? "None")
                         Spacer()
                     }
                     Button(action: {
-                        validationViewModel.validateVAT(settings.string(forKey: "RecentValidation") ?? "None")
+                        validationViewModel.validateVAT(UserDefaults.standard.string(forKey: "RecentValidation") ?? "None")
                         showingSheet = true
                         
                     }) {
@@ -45,14 +45,15 @@ struct ValidationView: View {
                             Image(systemName: "arrow.clockwise")
                             Text("Retry")
                         }
-                    }.disabled(settings.string(forKey: "RecentValidation") == "None")
-                    Button(action: {pasteboard.string = settings.string(forKey: "RecentValidation") ?? "None"}) {
+                        #warning("nije disabled")
+                    }.disabled(UserDefaults.standard.string(forKey: "RecentValidation") == "None")
+                    Button(action: {UIPasteboard.general.string = UserDefaults.standard.string(forKey: "RecentValidation") ?? "None"}) {
                         HStack {
                             
                             Image(systemName: "doc.on.doc")
                             Text("Copy")
                         }
-                    }.disabled(settings.string(forKey: "RecentValidation") == "None")
+                    }.disabled(UserDefaults.standard.string(forKey: "RecentValidation") == "None")
                 }
                 
             }.navigationBarTitle("VAT Validation")

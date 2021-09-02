@@ -11,14 +11,14 @@ class CountryManager: ObservableObject {
     
     @Published var selectedCountryIndex: Int = UserDefaults.standard.optionalInt(forKey: "selectedCountryIndex") ?? 0 {
         didSet {
-            settings.set(selectedCountryIndex, forKey: "selectedCountryIndex")
+            UserDefaults.standard.set(selectedCountryIndex, forKey: "selectedCountryIndex")
             print("setting selectedCountryIndex - \(selectedCountryIndex) - UserDefaults")
         }
     }
     
     @Published var selectedRateIndex: Int = UserDefaults.standard.optionalInt(forKey: "selectedRateIndex") ?? 0 {
         didSet {
-            settings.set(selectedRateIndex, forKey: "selectedRateIndex")
+            UserDefaults.standard.set(selectedRateIndex, forKey: "selectedRateIndex")
             print("setting selectedRateIndex - \(selectedRateIndex) - UserDefaults")
         }
     }
