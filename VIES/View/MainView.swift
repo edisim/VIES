@@ -5,27 +5,27 @@ struct MainView: View {
     var validCharacters = NSCharacterSet.capitalizedLetters
     var body: some View {
         
+        
+        TabView(selection: $selectedView) {
             
-            TabView(selection: $selectedView) {
-                
-                
-                ValidationView()
-                    .tag(ValidationView.tag)
-                    .tabItem { Label("Validation", systemImage: "checkmark") }
-                
-                CalculatorView()
-                    .tag(CalculatorView.tag)
-                    .tabItem { Label("Calculator", systemImage: "percent")}
-                
-                CountryRatesListView()
-                    .tag(CountryRatesListView.tag)
-                    .tabItem { Label("Rates", systemImage: "info") }
-                
-                SettingsView()
-                    .tag(SettingsView.tag)
-                    .tabItem { Label("Settings", systemImage: "gear") }
-                
-            }
+            
+            ValidationView()
+                .tag(ValidationView.tag)
+                .tabItem { Label("Validation", systemImage: "checkmark") }
+            
+            CalculatorView()
+                .tag(CalculatorView.tag)
+                .tabItem { Label("Calculator", systemImage: "percent")}
+            
+            CountryRatesListView()
+                .tag(CountryRatesListView.tag)
+                .tabItem { Label("Rates", systemImage: "info") }
+            
+            SettingsView()
+                .tag(SettingsView.tag)
+                .tabItem { Label("Settings", systemImage: "gear") }
+            
+        }
     }
 }
 
