@@ -1,28 +1,28 @@
 import Foundation
 
 class CountryManager: ObservableObject {
-    
+
     init(isForPreview: Bool = false) {
         print("initialising CountryManager")
         if !isForPreview {
             // Get my data and set to my items array
         }
     }
-    
+
     @Published var selectedCountryIndex: Int = UserDefaults.standard.optionalInt(forKey: "selectedCountryIndex") ?? 0 {
         didSet {
             UserDefaults.standard.set(selectedCountryIndex, forKey: "selectedCountryIndex")
             print("setting selectedCountryIndex - \(selectedCountryIndex) - UserDefaults")
         }
     }
-    
+
     @Published var selectedRateIndex: Int = UserDefaults.standard.optionalInt(forKey: "selectedRateIndex") ?? 0 {
         didSet {
             UserDefaults.standard.set(selectedRateIndex, forKey: "selectedRateIndex")
             print("setting selectedRateIndex - \(selectedRateIndex) - UserDefaults")
         }
     }
-    
+
     @Published var allCountries: [Country] = [
         //        0
         Country(name: "Austria 🇦🇹",
@@ -268,8 +268,7 @@ class CountryManager: ObservableObject {
                 rates: [10, 20],
                 capital: .bratislava)
     ]
-    
-    
+
     // MARK: Preview
-    
+
 }

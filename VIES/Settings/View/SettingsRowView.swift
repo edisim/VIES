@@ -12,7 +12,7 @@ struct SettingsRowView: View {
                 Image(systemName: item.image)
 //                    .foregroundColor(.white)
             }
-            
+
             Text(item.title)
         }
     }

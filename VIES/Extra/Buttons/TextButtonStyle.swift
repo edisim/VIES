@@ -1,7 +1,7 @@
 import SwiftUI
 
-struct IconButtonStyle: ButtonStyle {
-    
+struct TextButtonStyle: ButtonStyle {
+
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .foregroundColor(.accentColor)
@@ -9,8 +9,8 @@ struct IconButtonStyle: ButtonStyle {
             .animation(.spring(response: 0.5, dampingFraction: 0.5, blendDuration: 0))
             .font(Font.system(.title,
                               design: .default)
-                    .weight(.regular))
+                    .weight(.semibold))
             .padding()
-        
+
     }
 }

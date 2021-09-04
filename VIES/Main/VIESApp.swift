@@ -13,7 +13,7 @@ struct VIESApp: App {
                     .environmentObject(countryManager)
                     .disabled(showOnboarding)
                     .blur(radius: showOnboarding ? 5.0 : 0)
-                
+
                 if showOnboarding {
                     OnboardingScreens(showOnboarding: $showOnboarding, onboardSet: onboardSet)
                 }

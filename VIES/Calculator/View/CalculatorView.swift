@@ -2,13 +2,13 @@ import SwiftUI
 
 struct CalculatorView: View {
     static let tag: String? = "Calculator"
-    
+
     let formatter: NumberFormatter = {
         let formatter = NumberFormatter()
         formatter.numberStyle = .none
         return formatter
     }()
-    
+
     @State private var searchText = ""
     @StateObject var calculatorViewModel = CalculatorViewModel()
     @EnvironmentObject var countryManager: CountryManager
@@ -23,42 +23,42 @@ struct CalculatorView: View {
                         .disableAutocorrection(true)
                         .font(Font.title.weight(.bold))
                         .padding()
-                        .onChange(of: calculatorViewModel.amount, perform: { value in
+                        .onChange(of: calculatorViewModel.amount, perform: { _ in
                             calculatorViewModel.calculate(rate: countryManager.allCountries[countryManager.selectedCountryIndex].rates[countryManager.selectedRateIndex])
                         })
-                    
+
                 }
-                
+
                 Picker("Member State", selection: $countryManager.selectedCountryIndex) {
-                    
+
                     ForEach(0..<countryManager.allCountries.count, id: \.self) { index in
                         Text(countryManager.allCountries[index].name)
 
                     }
-                }.onChange(of: countryManager.selectedCountryIndex, perform: { value in
+                }.onChange(of: countryManager.selectedCountryIndex, perform: { _ in
                     countryManager.selectedRateIndex = 0
                     calculatorViewModel.calculate(rate: countryManager.allCountries[countryManager.selectedCountryIndex].rates[countryManager.selectedRateIndex])
                 })
-                
+
                 #warning("ovo je malo sjebano!")
                 Picker("Rate", selection: $countryManager.selectedRateIndex) {
                     ForEach(0..<countryManager.allCountries[countryManager.selectedCountryIndex].rates.count, id: \.self) { index in
                         Text("\(countryManager.allCountries[countryManager.selectedCountryIndex].rates[index], specifier: "%.f")%")
                     }
                 }.pickerStyle(SegmentedPickerStyle())
-                .onChange(of: countryManager.selectedRateIndex, perform: { value in
+                .onChange(of: countryManager.selectedRateIndex, perform: { _ in
                     calculatorViewModel.calculate(rate: countryManager.allCountries[countryManager.selectedCountryIndex].rates[countryManager.selectedRateIndex])
                 })
-                
+
                 Picker("Operation", selection: $calculatorViewModel.selectedOperation) {
                     ForEach(operations, id: \.self) {
                         Text($0)
                     }
                 }.pickerStyle(SegmentedPickerStyle())
-                .onChange(of: calculatorViewModel.selectedOperation, perform: { value in
+                .onChange(of: calculatorViewModel.selectedOperation, perform: { _ in
                     calculatorViewModel.calculate(rate: countryManager.allCountries[countryManager.selectedCountryIndex].rates[countryManager.selectedRateIndex])
                 })
-                
+
                 if calculatorViewModel.selectedOperation == "Minus VAT" {
                     Text("VAT -\(calculatorViewModel.VAT, specifier: "%.2f")")
                     Text("Net \(calculatorViewModel.net, specifier: "%.2f")")
@@ -66,7 +66,7 @@ struct CalculatorView: View {
                     Text("VAT +\(calculatorViewModel.VAT, specifier: "%.2f")")
                     Text("Net \(calculatorViewModel.net, specifier: "%.2f")")
                 }
-                
+
             }.navigationBarTitle("VAT Calculator")
         }
     }

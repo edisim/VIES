@@ -2,19 +2,19 @@ import SwiftUI
 
 struct ValidationView: View {
     static let tag: String? = "Validation"
-    
+
     @EnvironmentObject var countryManager: CountryManager
     @StateObject var validationViewModel = ValidationViewModel()
     @State private var showingSheet: Bool = false
     @State private var isEditing: Bool = false
     #warning("TAP ON CURLY BRACE TO SELECT IT")
-    
+
     var body: some View {
         NavigationView {
             Form {
-                
+
                 Picker("Member State", selection: $countryManager.selectedCountryIndex) {
-                    
+
                     ForEach(0..<countryManager.allCountries.count, id: \.self) { index in
                         Text(countryManager.allCountries[index].name)
                     }
@@ -27,9 +27,9 @@ struct ValidationView: View {
                             .onTapGesture {
                                 isEditing = true
                             }
-                        
+
                     }
-                    
+
                 }
                 Section(header: Text("Recent Validation")) {
                     HStack {
@@ -39,7 +39,7 @@ struct ValidationView: View {
                     Button(action: {
                         validationViewModel.validateVAT(UserDefaults.standard.string(forKey: "RecentValidation") ?? "None")
                         showingSheet = true
-                        
+
                     }) {
                         HStack {
                             Image(systemName: "arrow.clockwise")
@@ -49,31 +49,31 @@ struct ValidationView: View {
                     }.disabled(UserDefaults.standard.string(forKey: "RecentValidation") == "None")
                     Button(action: {UIPasteboard.general.string = UserDefaults.standard.string(forKey: "RecentValidation") ?? "None"}) {
                         HStack {
-                            
+
                             Image(systemName: "doc.on.doc")
                             Text("Copy")
                         }
                     }.disabled(UserDefaults.standard.string(forKey: "RecentValidation") == "None")
                 }
-                
+
             }.navigationBarTitle("VAT Validation")
             .navigationBarItems(trailing:
                                     Button(action: {
                                         self.isEditing = false
                                         validationViewModel.validateVAT("\(countryManager.allCountries[countryManager.selectedCountryIndex].countryCode)"+"\(validationViewModel.numberVAT)")
                                         showingSheet = true
-                                        
+
                                     }) {
                                         Text("Verify")
                                     }.disabled(validationViewModel.checkInput())
             )
-            
+
         }.sheet(isPresented: $showingSheet) {
             ValidationSheetView(response: validationViewModel.response)
         }
         .onAppear {
             AppReviewRequest.requestReviewIfNeeded()
         }
-        
+
     }
 }

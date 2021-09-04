@@ -13,7 +13,7 @@ struct OnboardingCardView: View {
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .padding(.leading, 5.0)
-                    
+
                 Spacer()
                 Button(action: {
                     withAnimation(.linear(duration: 0.3)) {
@@ -22,9 +22,9 @@ struct OnboardingCardView: View {
                 }) {
                     Image(systemName: "xmark.circle.fill")
                 }.buttonStyle(IconButtonStyle())
-                
+
             }.padding(.top, 5.0)
-            
+
             if let videoInfo = card.videoInfo {
                 if let url = card.pathToVideo {
                     VideoPlayer(player: AVPlayer(url: url))
@@ -38,7 +38,7 @@ struct OnboardingCardView: View {
             Text(card.text)
                 .font(.title3)
                 .padding(.all)
-                
+
             if let linkInfo = card.linkInfo {
                 Button(linkInfo.title) {
                     if let url = URL(string: linkInfo.webLink) {

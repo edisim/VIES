@@ -2,7 +2,7 @@ import Foundation
 
 struct Items {
     private let data: [Item] = [
-        
+
         Item(image: "star.fill",
              color: .systemYellow,
              title: "Rate The App",
@@ -18,7 +18,7 @@ struct Items {
              title: "Report A Bug",
              section: .feedback,
              url: "https://nikolafranicevic.com/EUVATNumberVIESFreelance/feedback"),
-        
+
         Item(image: "chevron.left.slash.chevron.right",
              color: .systemGray,
              title: "Source Code",
@@ -46,14 +46,13 @@ struct Items {
              section: .help,
              url: "https://ec.europa.eu/taxation_customs/taxation-1/value-added-tax-vat_en")
 
-
     ]
-    
+
     let miscellaneous: [Item]
     let legal: [Item]
     let feedback: [Item]
     let help: [Item]
-    
+
     init() {
         miscellaneous = data.filter { $0.section == .miscellaneous }
         legal = data.filter { $0.section == .legal }
@@ -70,7 +69,7 @@ enum ListSection: CaseIterable {
 }
 
 struct Item: Identifiable, Hashable {
-    
+
     // MARK: - Types
     enum Color: String, CaseIterable {
         case systemOrange
@@ -83,7 +82,7 @@ struct Item: Identifiable, Hashable {
         case systemYellow
         case black
     }
-    
+
     // MARK: - Properties
     var id = UUID()
     let image: String
