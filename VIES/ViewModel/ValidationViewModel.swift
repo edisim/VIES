@@ -37,7 +37,7 @@ class ValidationViewModel: ObservableObject {
         
         switch selectedCountryIndex {
         case 0:
-            if baseRule || numberVAT.first != "U"  || numberVAT.count != 9 {
+            if baseRule || numberVAT.first != "U"  || numberVAT.count != 8 {
                 return true
             } else {
                 return false
