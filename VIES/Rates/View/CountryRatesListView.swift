@@ -8,9 +8,9 @@ struct CountryRatesListView: View {
         NavigationView {
             VStack {
                 List {
-                    ForEach(0..<countryManager.allCountries.count, id: \.self) { index in
-                        NavigationLink(destination: CountryRateDetailView(country: countryManager.allCountries[index])) {
-                            Text(countryManager.allCountries[index].name)
+                    ForEach(0..<countryManager.countries.count, id: \.self) { index in
+                        NavigationLink(destination: CountryRateDetailView(country: countryManager.countries[index])) {
+                            Text(countryManager.countries[index].name)
                         }
                     }
                 }.listStyle(PlainListStyle())

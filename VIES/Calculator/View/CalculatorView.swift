@@ -17,37 +17,37 @@ struct CalculatorView: View {
         NavigationView {
             Form {
                 HStack {
-                    #warning("u iOS 15 ces moc dismiss keyboard bez problema")
+                    #warning("you can dismiss keyboard in iOS 15")
                     TextField("", value: $calculatorViewModel.amount, formatter: formatter)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .disableAutocorrection(true)
                         .font(Font.title.weight(.bold))
                         .padding()
                         .onChange(of: calculatorViewModel.amount, perform: { _ in
-                            calculatorViewModel.calculate(rate: countryManager.allCountries[countryManager.selectedCountryIndex].rates[countryManager.selectedRateIndex])
+                            calculatorViewModel.calculate(rate: countryManager.countries[countryManager.selectedCountryIndex].rates[countryManager.selectedRateIndex])
                         })
 
                 }
 
                 Picker("Member State", selection: $countryManager.selectedCountryIndex) {
 
-                    ForEach(0..<countryManager.allCountries.count, id: \.self) { index in
-                        Text(countryManager.allCountries[index].name)
+                    ForEach(0..<countryManager.countries.count, id: \.self) { index in
+                        Text(countryManager.countries[index].name)
 
                     }
                 }.onChange(of: countryManager.selectedCountryIndex, perform: { _ in
                     countryManager.selectedRateIndex = 0
-                    calculatorViewModel.calculate(rate: countryManager.allCountries[countryManager.selectedCountryIndex].rates[countryManager.selectedRateIndex])
+                    calculatorViewModel.calculate(rate: countryManager.countries[countryManager.selectedCountryIndex].rates[countryManager.selectedRateIndex])
                 })
 
-                #warning("ovo je malo sjebano!")
+                #warning("Refactor!")
                 Picker("Rate", selection: $countryManager.selectedRateIndex) {
-                    ForEach(0..<countryManager.allCountries[countryManager.selectedCountryIndex].rates.count, id: \.self) { index in
-                        Text("\(countryManager.allCountries[countryManager.selectedCountryIndex].rates[index], specifier: "%.f")%")
+                    ForEach(0..<countryManager.countries[countryManager.selectedCountryIndex].rates.count, id: \.self) { index in
+                        Text("\(countryManager.countries[countryManager.selectedCountryIndex].rates[index], specifier: "%.f")%")
                     }
                 }.pickerStyle(SegmentedPickerStyle())
                 .onChange(of: countryManager.selectedRateIndex, perform: { _ in
-                    calculatorViewModel.calculate(rate: countryManager.allCountries[countryManager.selectedCountryIndex].rates[countryManager.selectedRateIndex])
+                    calculatorViewModel.calculate(rate: countryManager.countries[countryManager.selectedCountryIndex].rates[countryManager.selectedRateIndex])
                 })
 
                 Picker("Operation", selection: $calculatorViewModel.selectedOperation) {
@@ -56,7 +56,7 @@ struct CalculatorView: View {
                     }
                 }.pickerStyle(SegmentedPickerStyle())
                 .onChange(of: calculatorViewModel.selectedOperation, perform: { _ in
-                    calculatorViewModel.calculate(rate: countryManager.allCountries[countryManager.selectedCountryIndex].rates[countryManager.selectedRateIndex])
+                    calculatorViewModel.calculate(rate: countryManager.countries[countryManager.selectedCountryIndex].rates[countryManager.selectedRateIndex])
                 })
 
                 if calculatorViewModel.selectedOperation == "Minus VAT" {

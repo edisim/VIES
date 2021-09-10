@@ -7,7 +7,6 @@ struct ValidationView: View {
     @StateObject var validationViewModel = ValidationViewModel()
     @State private var showingSheet: Bool = false
     @State private var isEditing: Bool = false
-    #warning("TAP ON CURLY BRACE TO SELECT IT")
 
     var body: some View {
         NavigationView {
@@ -15,13 +14,13 @@ struct ValidationView: View {
 
                 Picker("Member State", selection: $countryManager.selectedCountryIndex) {
 
-                    ForEach(0..<countryManager.allCountries.count, id: \.self) { index in
-                        Text(countryManager.allCountries[index].name)
+                    ForEach(0..<countryManager.countries.count, id: \.self) { index in
+                        Text(countryManager.countries[index].name)
                     }
                 }
                 Section(header: Text("VAT Number")) {
                     HStack {
-                        Text(countryManager.allCountries[countryManager.selectedCountryIndex].countryCode)
+                        Text(countryManager.countries[countryManager.selectedCountryIndex].countryCode)
                         TextField("\(validationViewModel.placeholderNumberVAT)", text: $validationViewModel.numberVAT)
                             .disableAutocorrection(true)
                             .onTapGesture {
@@ -45,7 +44,7 @@ struct ValidationView: View {
                             Image(systemName: "arrow.clockwise")
                             Text("Retry")
                         }
-                        #warning("nije disabled")
+                        #warning("it does not disable the button")
                     }.disabled(UserDefaults.standard.string(forKey: "RecentValidation") == "None")
                     Button(action: {UIPasteboard.general.string = UserDefaults.standard.string(forKey: "RecentValidation") ?? "None"}) {
                         HStack {
@@ -60,7 +59,7 @@ struct ValidationView: View {
             .navigationBarItems(trailing:
                                     Button(action: {
                                         self.isEditing = false
-                                        validationViewModel.validateVAT("\(countryManager.allCountries[countryManager.selectedCountryIndex].countryCode)"+"\(validationViewModel.numberVAT)")
+                                        validationViewModel.validateVAT("\(countryManager.countries[countryManager.selectedCountryIndex].countryCode)"+"\(validationViewModel.numberVAT)")
                                         showingSheet = true
 
                                     }) {
