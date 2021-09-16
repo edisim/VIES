@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct CountryRatesListView: View {
+struct RatesListView: View {
     static let tag: String? = "Rates"
     @State private var searchText = ""
     @EnvironmentObject var countryManager: CountryManager
@@ -9,7 +9,7 @@ struct CountryRatesListView: View {
             VStack {
                 List {
                     ForEach(0..<countryManager.countries.count, id: \.self) { index in
-                        NavigationLink(destination: CountryRateDetailView(country: countryManager.countries[index])) {
+                        NavigationLink(destination: RateDetailView(country: countryManager.countries[index])) {
                             Text(countryManager.countries[index].name)
                         }
                     }

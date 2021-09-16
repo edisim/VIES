@@ -15,8 +15,8 @@ struct MainView: View {
                 .tag(CalculatorView.tag)
                 .tabItem { Label("Calculator", systemImage: "percent")}
 
-            CountryRatesListView()
-                .tag(CountryRatesListView.tag)
+            RatesListView()
+                .tag(RatesListView.tag)
                 .tabItem { Label("Rates", systemImage: "info") }
 
             SettingsView()

@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct CountryRateDetailView: View {
+struct RateDetailView: View {
     var country: Country
     var body: some View {
         VStack(alignment: .leading) {

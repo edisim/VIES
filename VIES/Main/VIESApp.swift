@@ -15,7 +15,7 @@ struct VIESApp: App {
                     .blur(radius: showOnboarding ? 5.0 : 0)
 
                 if showOnboarding {
-                    OnboardingScreens(showOnboarding: $showOnboarding, onboardSet: onboardSet)
+                    OnboardingScreenView(showOnboarding: $showOnboarding, onboardSet: onboardSet)
                 }
             }.onAppear {
                 AppReviewRequest.requestReviewIfNeeded()

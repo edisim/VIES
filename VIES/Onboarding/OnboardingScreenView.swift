@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct OnboardingScreens: View {
+struct OnboardingScreenView: View {
     @Binding var showOnboarding: Bool
     var onboardSet: OnboardSet
     var body: some View {
