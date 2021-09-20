@@ -22,8 +22,6 @@ class ValidationViewModel: ObservableObject {
     // Read only
     var selectedCountryIndex = UserDefaults.standard.optionalInt(forKey: "selectedCountryIndex")
 
-    /// <#Description#>
-    /// - Returns: <#description#>
     func checkInput() -> Bool {
         #warning("Input must be Integer")
         var baseRule: Bool {

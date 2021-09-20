@@ -7,8 +7,8 @@ enum AppReviewRequest {
     @AppStorage("version") static var version = ""
     static func requestReviewIfNeeded() {
         runsSinceLastRequest += 1
-        let appBuild = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as! String
-        let appVersion = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
+      let appBuild = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String?
+      let appVersion = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String?
         let thisVersion = "\(appVersion) build: \(appBuild)"
         print("Run Count: \(runsSinceLastRequest)")
         print(thisVersion)
