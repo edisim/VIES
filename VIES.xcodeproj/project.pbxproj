@@ -84,9 +84,10 @@
 		9339769526E38046003D558B /* Validation */ = {
 			isa = PBXGroup;
 			children = (
-				933976BE26E381D0003D558B /* Model */,
-				933976BF26E381D3003D558B /* View */,
-				933976C026E381D8003D558B /* ViewModel */,
+				93CF2583258C6E07007CABA9 /* Response.swift */,
+				939ECD802590441E00014A71 /* ValidationSheetView.swift */,
+				9331774E2598453B00EEE15D /* ValidationView.swift */,
+				93A3456326DE026000BFB842 /* ValidationViewModel.swift */,
 			);
 			path = Validation;
 			sourceTree = "<group>";
@@ -94,7 +95,6 @@
 		9339769626E38050003D558B /* Calculator */ = {
 			isa = PBXGroup;
 			children = (
-				933976BC26E381C8003D558B /* Model */,
 				933976BB26E381C5003D558B /* View */,
 				933976BD26E381CC003D558B /* ViewModel */,
 			);
@@ -249,42 +249,10 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		933976BC26E381C8003D558B /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		933976BD26E381CC003D558B /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 				939C220926DDED5500677BAF /* CalculatorViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		933976BE26E381D0003D558B /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				93CF2583258C6E07007CABA9 /* Response.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		933976BF26E381D3003D558B /* View */ = {
-			isa = PBXGroup;
-			children = (
-				939ECD802590441E00014A71 /* ValidationSheetView.swift */,
-				9331774E2598453B00EEE15D /* ValidationView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		933976C026E381D8003D558B /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				93A3456326DE026000BFB842 /* ValidationViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
