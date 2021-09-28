@@ -14,7 +14,7 @@ struct RatesListView: View {
             }
           }
         }.listStyle(PlainListStyle())
-        .navigationBarTitle("VAT Rates")
+        .navigationBarTitle("Rates")
       }
     }
   }

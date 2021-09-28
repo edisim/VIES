@@ -57,7 +57,7 @@ struct CalculatorView: View {
           Text("VAT +\(calculatorViewModel.VAT, specifier: "%.2f")")
           Text("Net \(calculatorViewModel.net, specifier: "%.2f")")
         }
-      }.navigationBarTitle("VAT Calculator")
+      }.navigationBarTitle("Calculator")
     }
   }
 }

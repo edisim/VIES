@@ -5,13 +5,7 @@ struct SettingsRowView: View {
   let item: Item
   var body: some View {
     HStack {
-      ZStack {
-        //                RoundedRectangle(cornerRadius: 8, style: .continuous)
-        //                    .frame(width: 30, height: 30)
-        //                    .foregroundColor(Color(UIColor.colorWith(name: item.color.rawValue)!))
-        Image(systemName: item.image)
-        //                    .foregroundColor(.white)
-      }
+      Image(systemName: item.image)
       Text(item.title)
     }
   }

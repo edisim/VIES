@@ -46,7 +46,7 @@ struct ValidationView: View {
             }
           }.disabled(UserDefaults.standard.string(forKey: "RecentValidation") == "None")
         }
-      }.navigationBarTitle("VAT Validation")
+      }.navigationBarTitle("Validation")
       .navigationBarItems(trailing: Button {
         self.isEditing = false
         validationViewModel.validateVAT("\(countryManager.countries[countryManager.selectedCountryIndex].countryCode)"+"\(validationViewModel.numberVAT)")
