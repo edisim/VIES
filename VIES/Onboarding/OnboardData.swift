@@ -11,17 +11,17 @@ enum OnboardData {
     let onboardSet = OnboardSet()
     onboardSet.dimensions(width: width, height: height)
     onboardSet.newCard(
-      title: "VAT Validation",
+      title: "Validation",
       image: "Validation",
       text: "Quickly check if your VAT number is valid or not. Choose your member state, enter your VAT number, and tap verify in the top right corner."
     )
     onboardSet.newCard(
-      title: "VAT Calculator",
+      title: "Calculator",
       image: "Calculate",
       text: "Calculate your income in a snap. Exclude or include VAT at various rates."
     )
     onboardSet.newCard(
-      title: "VAT Rates",
+      title: "Rates",
       image: "Check",
       text: "What EU countries have the lowest VAT rates? What types of rates even exist? Find out by tapping the desired country."
     )
