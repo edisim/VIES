@@ -23,17 +23,17 @@ extension OnboardSet {
     onboardSet.newCard(
       title: "VAT Validation",
       image: "Validation",
-      text: "Quickly check if your VAT number is valid or not. Choose your member state, enter your VAT number, and tap verify in the top right corner."
+      text: NSLocalizedString("onboarding.1", comment: "")
     )
     onboardSet.newCard(
       title: "VAT Calculator",
       image: "Calculate",
-      text: "Calculate your income in a snap. Exclude or include VAT at various rates."
+      text: NSLocalizedString("onboarding.2", comment: "")
     )
     onboardSet.newCard(
       title: "VAT Rates",
       image: "Check",
-      text: "What EU countries have the lowest VAT rates? What types of rates even exist? Find out by tapping the desired country."
+      text: NSLocalizedString("onboarding.3", comment: "")
     )
     return onboardSet
   }
