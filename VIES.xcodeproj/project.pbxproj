@@ -16,6 +16,7 @@
 		9303D39B26C4EBF6001B9A38 /* OnboardingCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9303D39A26C4EBF6001B9A38 /* OnboardingCardView.swift */; };
 		9303D3A026C53BD2001B9A38 /* OnboardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9303D39F26C53BD2001B9A38 /* OnboardData.swift */; };
 		9331774F2598453B00EEE15D /* ValidationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9331774E2598453B00EEE15D /* ValidationView.swift */; };
+		9335F75B2702F2BC004CCA9D /* ValidationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9335F75A2702F2BC004CCA9D /* ValidationViewModel.swift */; };
 		934EDEFD2691F33B0090A5C5 /* AppReviewRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934EDEFC2691F33B0090A5C5 /* AppReviewRequest.swift */; };
 		936FF15825A59368006922FA /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936FF15725A59368006922FA /* MapView.swift */; };
 		936FF15C25A5A77C006922FA /* Capitals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936FF15B25A5A77C006922FA /* Capitals.swift */; };
@@ -25,8 +26,11 @@
 		939C220A26DDED5500677BAF /* CalculatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939C220926DDED5500677BAF /* CalculatorViewModel.swift */; };
 		939ECD812590441E00014A71 /* ValidationSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939ECD802590441E00014A71 /* ValidationSheetView.swift */; };
 		93A3456126DDFCB200BFB842 /* CountryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A3456026DDFCB200BFB842 /* CountryManager.swift */; };
+<<<<<<< HEAD
 		93A3456426DE026000BFB842 /* ValidationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A3456326DE026000BFB842 /* ValidationViewModel.swift */; };
 		93CCD7612735A9AC000FAE0E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 93CCD7632735A9AC000FAE0E /* Localizable.strings */; };
+=======
+>>>>>>> main
 		93CF2584258C6E07007CABA9 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CF2583258C6E07007CABA9 /* Response.swift */; };
 		93D5CCAF26BECBA10033E7C8 /* CalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D5CCAE26BECBA10033E7C8 /* CalculatorView.swift */; };
 		93D92EC6258B30760062BEB3 /* VIESApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D92EC5258B30760062BEB3 /* VIESApp.swift */; };
@@ -48,6 +52,7 @@
 		9303D39A26C4EBF6001B9A38 /* OnboardingCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCardView.swift; sourceTree = "<group>"; };
 		9303D39F26C53BD2001B9A38 /* OnboardData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardData.swift; sourceTree = "<group>"; };
 		9331774E2598453B00EEE15D /* ValidationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationView.swift; sourceTree = "<group>"; };
+		9335F75A2702F2BC004CCA9D /* ValidationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationViewModel.swift; sourceTree = "<group>"; };
 		934EDEFC2691F33B0090A5C5 /* AppReviewRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReviewRequest.swift; sourceTree = "<group>"; };
 		936FF15725A59368006922FA /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		936FF15B25A5A77C006922FA /* Capitals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Capitals.swift; sourceTree = "<group>"; };
@@ -57,8 +62,11 @@
 		939C220926DDED5500677BAF /* CalculatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewModel.swift; sourceTree = "<group>"; };
 		939ECD802590441E00014A71 /* ValidationSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationSheetView.swift; sourceTree = "<group>"; };
 		93A3456026DDFCB200BFB842 /* CountryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryManager.swift; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		93A3456326DE026000BFB842 /* ValidationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationViewModel.swift; sourceTree = "<group>"; };
 		93CCD7622735A9AC000FAE0E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+=======
+>>>>>>> main
 		93CF2583258C6E07007CABA9 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		93D5CCAE26BECBA10033E7C8 /* CalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorView.swift; sourceTree = "<group>"; };
 		93D92EC2258B30760062BEB3 /* VIES.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VIES.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,7 +97,7 @@
 				93CF2583258C6E07007CABA9 /* Response.swift */,
 				939ECD802590441E00014A71 /* ValidationSheetView.swift */,
 				9331774E2598453B00EEE15D /* ValidationView.swift */,
-				93A3456326DE026000BFB842 /* ValidationViewModel.swift */,
+				9335F75A2702F2BC004CCA9D /* ValidationViewModel.swift */,
 			);
 			path = Validation;
 			sourceTree = "<group>";
@@ -310,9 +318,9 @@
 				9331774F2598453B00EEE15D /* ValidationView.swift in Sources */,
 				93F951F325A2EEB3003FC4BB /* RateDetailView.swift in Sources */,
 				939C220426DDE40B00677BAF /* TextButtonStyle.swift in Sources */,
+				9335F75B2702F2BC004CCA9D /* ValidationViewModel.swift in Sources */,
 				934EDEFD2691F33B0090A5C5 /* AppReviewRequest.swift in Sources */,
 				93D92EC6258B30760062BEB3 /* VIESApp.swift in Sources */,
-				93A3456426DE026000BFB842 /* ValidationViewModel.swift in Sources */,
 				9303D37526C3C302001B9A38 /* SettingsListView.swift in Sources */,
 				9303D39226C4E26E001B9A38 /* OnboardingScreenView.swift in Sources */,
 				93D5CCAF26BECBA10033E7C8 /* CalculatorView.swift in Sources */,
