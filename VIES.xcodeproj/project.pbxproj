@@ -26,11 +26,6 @@
 		939C220A26DDED5500677BAF /* CalculatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939C220926DDED5500677BAF /* CalculatorViewModel.swift */; };
 		939ECD812590441E00014A71 /* ValidationSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939ECD802590441E00014A71 /* ValidationSheetView.swift */; };
 		93A3456126DDFCB200BFB842 /* CountryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A3456026DDFCB200BFB842 /* CountryManager.swift */; };
-<<<<<<< HEAD
-		93A3456426DE026000BFB842 /* ValidationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A3456326DE026000BFB842 /* ValidationViewModel.swift */; };
-		93CCD7612735A9AC000FAE0E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 93CCD7632735A9AC000FAE0E /* Localizable.strings */; };
-=======
->>>>>>> main
 		93CF2584258C6E07007CABA9 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CF2583258C6E07007CABA9 /* Response.swift */; };
 		93D5CCAF26BECBA10033E7C8 /* CalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D5CCAE26BECBA10033E7C8 /* CalculatorView.swift */; };
 		93D92EC6258B30760062BEB3 /* VIESApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D92EC5258B30760062BEB3 /* VIESApp.swift */; };
@@ -62,11 +57,6 @@
 		939C220926DDED5500677BAF /* CalculatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewModel.swift; sourceTree = "<group>"; };
 		939ECD802590441E00014A71 /* ValidationSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationSheetView.swift; sourceTree = "<group>"; };
 		93A3456026DDFCB200BFB842 /* CountryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryManager.swift; sourceTree = "<group>"; };
-<<<<<<< HEAD
-		93A3456326DE026000BFB842 /* ValidationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationViewModel.swift; sourceTree = "<group>"; };
-		93CCD7622735A9AC000FAE0E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-=======
->>>>>>> main
 		93CF2583258C6E07007CABA9 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		93D5CCAE26BECBA10033E7C8 /* CalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorView.swift; sourceTree = "<group>"; };
 		93D92EC2258B30760062BEB3 /* VIES.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VIES.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -275,7 +265,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				93D92ECD258B307A0062BEB3 /* Preview Assets.xcassets in Resources */,
-				93CCD7612735A9AC000FAE0E /* Localizable.strings in Resources */,
 				93D92ECA258B307A0062BEB3 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -342,7 +331,6 @@
 		93CCD7632735A9AC000FAE0E /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				93CCD7622735A9AC000FAE0E /* en */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -483,7 +471,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.2.3;
+				MARKETING_VERSION = 2.2.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.NikolaFranicevic.VIES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = VIES;
@@ -509,7 +497,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.2.3;
+				MARKETING_VERSION = 2.2.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.NikolaFranicevic.VIES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = VIES;
