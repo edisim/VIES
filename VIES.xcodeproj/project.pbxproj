@@ -17,6 +17,7 @@
 		9303D3A026C53BD2001B9A38 /* OnboardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9303D39F26C53BD2001B9A38 /* OnboardData.swift */; };
 		9331774F2598453B00EEE15D /* ValidationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9331774E2598453B00EEE15D /* ValidationView.swift */; };
 		9335F75B2702F2BC004CCA9D /* ValidationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9335F75A2702F2BC004CCA9D /* ValidationViewModel.swift */; };
+		9343B832281EDA8600FBDDEF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9343B831281EDA8600FBDDEF /* Localizable.strings */; };
 		934EDEFD2691F33B0090A5C5 /* AppReviewRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934EDEFC2691F33B0090A5C5 /* AppReviewRequest.swift */; };
 		936FF15825A59368006922FA /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936FF15725A59368006922FA /* MapView.swift */; };
 		936FF15C25A5A77C006922FA /* Capitals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936FF15B25A5A77C006922FA /* Capitals.swift */; };
@@ -48,6 +49,7 @@
 		9303D39F26C53BD2001B9A38 /* OnboardData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardData.swift; sourceTree = "<group>"; };
 		9331774E2598453B00EEE15D /* ValidationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationView.swift; sourceTree = "<group>"; };
 		9335F75A2702F2BC004CCA9D /* ValidationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationViewModel.swift; sourceTree = "<group>"; };
+		9343B831281EDA8600FBDDEF /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		934EDEFC2691F33B0090A5C5 /* AppReviewRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReviewRequest.swift; sourceTree = "<group>"; };
 		936FF15725A59368006922FA /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		936FF15B25A5A77C006922FA /* Capitals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Capitals.swift; sourceTree = "<group>"; };
@@ -190,7 +192,7 @@
 				9339769526E38046003D558B /* Validation */,
 				939C220726DDE41900677BAF /* Button Styles */,
 				933976C426E382B8003D558B /* Extra */,
-				93CCD7632735A9AC000FAE0E /* Localizable.strings */,
+				9343B831281EDA8600FBDDEF /* Localizable.strings */,
 				93D92EC9258B307A0062BEB3 /* Assets.xcassets */,
 				93D92ECE258B307A0062BEB3 /* Info.plist */,
 				93D92ECB258B307A0062BEB3 /* Preview Content */,
@@ -265,6 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				93D92ECD258B307A0062BEB3 /* Preview Assets.xcassets in Resources */,
+				9343B832281EDA8600FBDDEF /* Localizable.strings in Resources */,
 				93D92ECA258B307A0062BEB3 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -326,16 +329,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		93CCD7632735A9AC000FAE0E /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-			);
-			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		93D92ECF258B307A0062BEB3 /* Debug */ = {
