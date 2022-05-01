@@ -14,14 +14,14 @@ struct Items {
       color: .systemOrange,
       title: "Provide Feedback",
       section: .feedback,
-      url: "https://nikolafranicevic.com/EUVATNumberVIESFreelance/feedback"
+      url: "https://nikolafranicevic.com/EUVATNumberVIESFreelance/"
     ),
     Item(
       image: "ladybug.fill",
       color: .systemRed,
       title: "Report A Bug",
       section: .feedback,
-      url: "https://nikolafranicevic.com/EUVATNumberVIESFreelance/feedback"
+      url: "https://nikolafranicevic.com/EUVATNumberVIESFreelance/"
     ),
     Item(
       image: "chevron.left.slash.chevron.right",
